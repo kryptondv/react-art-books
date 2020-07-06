@@ -11,7 +11,7 @@ import Topbar from './Topbar';
 import Sidecart from './Sidecart';
 import Footer from './Footer';
 
-function App() {
+const App = () => {
   return (
     <>
       <Topbar />
@@ -28,6 +28,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
