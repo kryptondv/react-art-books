@@ -6,6 +6,17 @@
   background: $color-white;
   z-index: 2;
 
+  &--navbar-is-open::before {
+    content: '';
+    position: fixed;
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: fadeIn .3s ease-out;
+  }
+
   &__logo {
     height: 3.5rem;
   }
@@ -15,10 +26,12 @@
     font-size: 1.7rem;
     transition: $transition-main;
 
-    &--white {
+    &--navbar-is-open {
       color: $color-white;
       z-index: 2;
     }
+  
+  
   }
 
   .top-bar-container {
@@ -29,8 +42,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .top-bar__icon {
-    display: none;
+  .top-bar {
+    &--navbar-is-open::before {
+      display: none;
+    }
+
+    &__icon {
+      display: none;
+    }
   }
 
   .top-bar-container {
