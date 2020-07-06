@@ -16,7 +16,7 @@ const Navbar = () => {
         </li>
         <li className="navbar__item">
           <Link className="navbar__link" to="/o-nas">
-            o nas
+            o&nbsp;nas
           </Link>
         </li>
         <li className="navbar__item">

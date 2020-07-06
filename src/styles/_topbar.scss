@@ -5,9 +5,6 @@
   padding: 0.75rem 1rem;
   background: $color-white;
   z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   &__logo {
     height: 3.5rem;
@@ -22,5 +19,22 @@
       color: $color-white;
       z-index: 2;
     }
+  }
+
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .top-bar__icon {
+    display: none;
+  }
+
+  .top-bar-container {
+    max-width: 1300px;
+    margin: 0 auto;
   }
 }
