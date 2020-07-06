@@ -43,7 +43,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px), (orientation: landscape) {
   .top-bar__icon {
     display: none;
   }
