@@ -3,7 +3,8 @@ import AppReducer from './AppReducer';
 
 const initialState = {
   navbarOpen:false,
-  cartOpen: false
+  cartOpen: false,
+  cartItems: 0,
 }
 
 export const ProductContext = createContext();

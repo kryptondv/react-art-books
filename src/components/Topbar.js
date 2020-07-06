@@ -1,16 +1,18 @@
-import React, { useContext } from 'react'
-import Navbar from './Navbar'
-import { ProductContext } from '../context/Context'
+import React, { useContext } from 'react';
+import Navbar from './Navbar';
+import logo from '../assets/img/logo.png';
+import { FaBars } from 'react-icons/fa';
+import { ProductContext } from '../context/Context';
 
 const Topbar = () => {
-
-  const { handleNavbar, handleCart, openCart, closeCart } = useContext(ProductContext)
+  const { handleNavbar, navbarOpen } = useContext(ProductContext);
   return (
-    <div>
-      <button onClick={closeCart}>test</button>
+    <div className="top-bar">
+      <img className="top-bar__logo" src={logo} alt="logo" />
+      <FaBars className={`top-bar__icon ${navbarOpen && 'top-bar__icon--white'}`} onClick={handleNavbar} />
       <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Topbar
+export default Topbar;
