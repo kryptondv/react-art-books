@@ -3,7 +3,15 @@ import React from 'react'
 const HomePage = () => {
   return (
     <>
-      Home page
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
+      <h1>test</h1>
     </>
   )
 }
