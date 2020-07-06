@@ -108,14 +108,20 @@
 
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .navbar {
-    &__link,
-    &__icon {
+    &__link {
       font-size: 1rem;
     }
 
     &__link,
     &__cart {
       margin-left: 4rem;
+    }
+
+    &__cart-items {
+      width: 1rem;
+      height: 1rem;
+      top: 10%;
+      right: -5%;
     }
   }
 }
