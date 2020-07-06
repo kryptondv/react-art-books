@@ -8,7 +8,7 @@ import { ProductContext } from '../context/Context';
 const Topbar = () => {
   const { handleNavbar, navbarOpen } = useContext(ProductContext);
   return (
-    <div className={`top-bar ${navbarOpen && 'top-bar--navbar-is-open'}`}>
+    <div className="top-bar">
       <div className="top-bar-container">
         <Link to="/">
           <img className="top-bar__logo" src={logo} alt="logo" />
@@ -21,6 +21,10 @@ const Topbar = () => {
         />
         <Navbar />
       </div>
+      <div
+        className={`overlay ${navbarOpen && 'overlay--navbar-is-open'}`}
+        onClick={handleNavbar}
+      ></div>
     </div>
   );
 };
