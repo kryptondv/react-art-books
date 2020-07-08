@@ -5,8 +5,10 @@ const Hero = ({ children, page, titles }) => {
   return (
     <div className={`hero hero--${page}`}>
       <div className="hero__banner">
-        {titles.map((title, index ) => (
-          <h2 key={index} className="hero__title">{title}</h2>
+        {titles.map((title, index) => (
+          <h2 key={index} className="hero__title">
+            {title}
+          </h2>
         ))}
         {children}
       </div>
@@ -16,6 +18,10 @@ const Hero = ({ children, page, titles }) => {
 
 Hero.propTypes = {
   titles: PropTypes.array,
+};
+
+Hero.defaultProps = {
+  page: 'home',
 };
 
 export default Hero;

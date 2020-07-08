@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <Hero page="home" titles={['sztuka', 'architektura', 'design', 'fotografia']}>
-        <Link to="/ksiazki" className='btn'>zobacz</Link>
+        <Link to="/ksiazki" className='btn hero__btn'>zobacz</Link>
       </Hero>
     </>
   );
