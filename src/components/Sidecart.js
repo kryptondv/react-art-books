@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { ProductContext } from '../context/Context';
 
 const Sidecart = () => {
+  const { cartOpen, closeCart, cart } = useContext(ProductContext);
   return (
-    <div>
-      sidecart
+    <div className ={`sidecart ${cartOpen && 'sidecart--is-open'}`} onClick={closeCart}>
+      <p>cart items</p>
     </div>
-  )
-}
+  );
+};
 
-export default Sidecart
+export default Sidecart;

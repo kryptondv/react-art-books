@@ -17,10 +17,10 @@ const App = () => {
       <Topbar />
       <Sidecart />
       <Switch>
-        <Route path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Route path="/o-nas" component={AboutPage} />
         <Route path="/kontakt" component={ContactPage} />
-        <Route path="/ksiazki" component={ProductsPage} />
+        <Route exact path="/ksiazki" component={ProductsPage} />
         <Route path="/ksiazki/:slug" component={SingleProductPage} />
         <Route path="/koszyk" component={CartPage} />
         <Route component={ErrorPage} />

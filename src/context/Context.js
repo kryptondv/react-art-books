@@ -5,6 +5,7 @@ const initialState = {
   navbarOpen:false,
   cartOpen: false,
   cartItems: 0,
+  cart: []
 }
 
 export const ProductContext = createContext();

@@ -6,7 +6,13 @@ import { FaBars } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
 
 const Topbar = () => {
-  const { handleNavbar, navbarOpen } = useContext(ProductContext);
+  const { handleNavbar, navbarOpen, closeCart } = useContext(ProductContext);
+
+  const handleNavbarAndCart = () => {
+    handleNavbar();
+    closeCart();
+  }
+
   return (
     <div className="top-bar">
       <div className="top-bar-container">
@@ -17,13 +23,13 @@ const Topbar = () => {
           className={`top-bar__icon ${
             navbarOpen && 'top-bar__icon--navbar-is-open'
           }`}
-          onClick={handleNavbar}
+          onClick={handleNavbarAndCart}
         />
         <Navbar />
       </div>
       <div
         className={`overlay ${navbarOpen && 'overlay--navbar-is-open'}`}
-        onClick={handleNavbar}
+        onClick={handleNavbarAndCart}
       ></div>
     </div>
   );
