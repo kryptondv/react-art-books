@@ -6,6 +6,7 @@
   &__title {
     font-size: 2.5rem;
     letter-spacing: $spacing-main;
+    animation: fadeUp .5s ease-out forwards;
   
   }
 
@@ -14,6 +15,7 @@
     height: 5px;
     margin: 0 auto;
     background: $color-primary;
+    animation: scaleUp .7s ease-out forwards;
 
     &--alternate {
       background: $color-black;

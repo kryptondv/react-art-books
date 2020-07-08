@@ -19,6 +19,7 @@
     text-transform: capitalize;
     line-height: 1.3;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeUp .5s ease-out forwards;
   }
 
   &__btn {
