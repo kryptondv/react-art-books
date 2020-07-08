@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../components/Hero';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
-    <div>
-      error
-    </div>
-  )
-}
+    <>
+      <Hero titles={['404']} subtitle="Nie ma takiej strony">
+        <Link to="/" className="btn hero__btn">
+          Strona główna
+        </Link>
+      </Hero>
+    </>
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;

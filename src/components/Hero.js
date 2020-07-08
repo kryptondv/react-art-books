@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Hero = ({ children, page, titles }) => {
+const Hero = ({ children, page, titles, subtitle }) => {
   return (
     <div className={`hero hero--${page}`}>
       <div className="hero__banner">
-        {titles.map((title, index) => (
+        {titles && titles.map((title, index) => (
           <h2 key={index} className="hero__title">
             {title}
           </h2>
         ))}
+        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
         {children}
       </div>
     </div>

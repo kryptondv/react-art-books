@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   margin: 0 1rem;
+  max-width: 1500px;
+  animation: fadeIn 1s ease;
 
   &__banner {
     width: 100%;
@@ -25,6 +27,11 @@
 
   &--home {
     background: url('../assets//img/bg.jpg') 45% 10% / cover no-repeat;
+  }
+
+  &--about {
+    background: url('../assets//img/aboutBg.jpg') center 60%/ cover no-repeat;
+    max-height: 25vh;
   }
 }
 
@@ -62,6 +69,12 @@
       font-size: 6rem;
     }
   }
+}
+
+@media screen and (min-width: 1500px) {
+  .hero {
+    margin: 0 auto;
+  }  
 }
 
 @media screen and (max-height: 450px) {
