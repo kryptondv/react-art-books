@@ -6,6 +6,10 @@
   background: $color-white;
   z-index: 2;
 
+  &__link {
+    display: flex;
+  }
+
   &__logo {
     height: 3.5rem;
   }

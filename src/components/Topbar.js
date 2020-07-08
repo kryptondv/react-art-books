@@ -16,7 +16,7 @@ const Topbar = () => {
   return (
     <div className="top-bar">
       <div className="top-bar-container">
-        <Link to="/">
+        <Link className="top-bar__link" to="/">
           <img className="top-bar__logo" src={logo} alt="logo" />
         </Link>
         <FaBars
