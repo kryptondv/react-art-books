@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  right: 0;
+  right: -70%;
   top: 0;
   background: $color-primary;
   height: 100%;
@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
-  transform: translateX(100%);
+  
   transition: $transition-main;
   z-index: 1;
 
@@ -60,7 +60,7 @@
   }
 
   &--is-open {
-    transform: initial;
+    transform: translateX(-100%);
   }
 }
 
