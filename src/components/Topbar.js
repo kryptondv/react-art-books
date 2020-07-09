@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import logo from '../assets/img/logo.png';
-import { FaBars } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
 import Hamburger from './Hamburger';
 
