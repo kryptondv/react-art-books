@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
-  
+  // transform: translateX(100%);
   transition: $transition-main;
   z-index: 1;
 
@@ -68,6 +68,7 @@
   .navbar {
     transform: initial;
     position: relative;
+    right: 0;
     background: transparent;
     flex-direction: row;
     justify-content: flex-end;
