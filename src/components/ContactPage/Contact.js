@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Title from '../Title';
+import MessageSentModal from './MessageSentModal';
 import encode from '../../functions/encodeURI';
 
 const Contact = () => {
@@ -19,6 +20,7 @@ const Contact = () => {
 
   const [formData, setFormData] = useState(initialFormState);
   const [error, setError] = useState(initialErrorState);
+  const [messageIsSent, setMessageIsSent] = useState('')
 
   const { name, email, subject, message } = formData;
   const { nameErr, emailErr, subjectErr, messageErr } = error;
@@ -54,8 +56,8 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'contact', ...formData }),
       })
-        .then(() => alert('Success!'))
-        .catch(error => alert(error));
+        .then(() => setMessageIsSent('success'))
+        .catch(error => setMessageIsSent('failure'));
 
       setFormData(initialFormState);
     }
@@ -73,6 +75,12 @@ const Contact = () => {
 
   return (
     <section className="contact">
+      {messageIsSent && (
+        <MessageSentModal
+          message={messageIsSent}
+          setMessageIsSent={setMessageIsSent}
+        />
+      )}
       <Title title="napisz do nas" />
       <form
         className="contact-form"

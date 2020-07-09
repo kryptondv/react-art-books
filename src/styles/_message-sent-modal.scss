@@ -1,0 +1,49 @@
+.message-sent-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.7);
+  animation: fadeIn .2s;
+
+  &__box {
+    background: white;
+    border: 1px solid lighten($color-lightgrey, 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $color-primary;
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .message-sent-modal {
+    &__title {
+      font-size: 5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+  }
+}
