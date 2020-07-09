@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 4rem;
-  transition: $transition-main;
+  transition: transform $transition-main;
   z-index: 1;
   overflow: hidden;
 
