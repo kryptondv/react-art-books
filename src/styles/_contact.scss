@@ -7,17 +7,20 @@
   width: 100%;
   max-width: 30rem;
   margin: 0 auto;
+  
 
   &__form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    position: relative;
   }
 
   &__label {
     // font-weight: 700;
     font-size: .8rem;
     text-transform: capitalize;
+    margin-bottom: 0.1rem;
   }
 
   &__form-control {
@@ -34,6 +37,11 @@
     &--message {
       resize: none;
       height: 5rem;
+    }
+
+    &--error {
+      border-color: #ff4545;
+      transition: .1s;
     }
   }
 
@@ -56,5 +64,15 @@
       color: $color-primary;
       background: transparent;
     }
+  }
+
+  &__error-msg {
+    position: absolute;
+    bottom: -.9rem;
+    font-size: 0.7rem;
+    color: #ff4545;
+    right: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
   }
 }
