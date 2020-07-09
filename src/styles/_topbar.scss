@@ -14,17 +14,6 @@
     height: 3.5rem;
   }
 
-  &__icon {
-    color: $color-primary;
-    font-size: 1.7rem;
-    transition: $transition-main;
-
-    &--navbar-is-open {
-      color: $color-white;
-      z-index: 2;
-    }
-  }
-
   .top-bar-container {
     display: flex;
     justify-content: space-between;
@@ -48,10 +37,6 @@
 }
 
 @media screen and (min-width: 768px), (orientation: landscape) {
-  .top-bar__icon {
-    display: none;
-  }
-
   .overlay {
     display: none;
   }

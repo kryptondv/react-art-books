@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import logo from '../assets/img/logo.png';
 import { FaBars } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
+import Hamburger from './Hamburger';
 
 const Topbar = () => {
   const { handleNavbar, navbarOpen, closeCart } = useContext(ProductContext);
@@ -19,12 +20,7 @@ const Topbar = () => {
         <Link className="top-bar__link" to="/">
           <img className="top-bar__logo" src={logo} alt="logo" />
         </Link>
-        <FaBars
-          className={`top-bar__icon ${
-            navbarOpen && 'top-bar__icon--navbar-is-open'
-          }`}
-          onClick={handleNavbarAndCart}
-        />
+        <Hamburger handleNavbarAndCart={handleNavbarAndCart} navbarOpen={navbarOpen}/>
         <Navbar />
       </div>
       <div
