@@ -1,0 +1,60 @@
+.contact {
+  margin: 1rem;
+}
+
+.contact-form {
+  color: $color-lightgrey;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    // font-weight: 700;
+    font-size: .8rem;
+    text-transform: capitalize;
+  }
+
+  &__form-control {
+    padding: 0.4rem;
+    border: 1px solid lighten($color-lightgrey, 50%);
+    border-radius: 5px;
+    background: lighten($color-lightgrey, 60%);
+    
+    &:focus {
+      outline: none;
+      border-color: lighten($color-lightgrey, 20%);
+    }
+
+    &--message {
+      resize: none;
+      height: 5rem;
+    }
+  }
+
+  &__submit-btn {
+    margin-top: .5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid $color-primary;
+    font-family: 'Raleway', sans-serif;
+    color: $color-white;
+    background: $color-primary;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: $transition-main;
+
+    &:hover,
+    &:active {
+      outline: none;
+      color: $color-primary;
+      background: transparent;
+    }
+  }
+}

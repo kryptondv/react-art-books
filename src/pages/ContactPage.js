@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../components/Hero';
+import Contact from '../components/ContactPage/Contact';
 
 const ContactPage = () => {
   return (
-    <div>
-      contact
-    </div>
-  )
-}
+    <>
+      <Hero page="contact" />
+      <Contact />
+    </>
+  );
+};
 
-export default ContactPage
+export default ContactPage;
