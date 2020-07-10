@@ -4,6 +4,7 @@ import MessageSentModal from './MessageSentModal';
 import encode from '../../functions/encodeURI';
 
 const Contact = () => {
+  // initial state data
   const initialFormState = {
     name: '',
     email: '',
@@ -18,6 +19,7 @@ const Contact = () => {
     messageErr: '',
   };
 
+  // useState & destructuring
   const [formData, setFormData] = useState(initialFormState);
   const [error, setError] = useState(initialErrorState);
   const [messageIsSent, setMessageIsSent] = useState('')
@@ -48,6 +50,7 @@ const Contact = () => {
     return isValid;
   };
 
+  // event handlers
   const handleSubmit = e => {
     const isValid = validate();
     if (isValid) {
@@ -69,19 +72,24 @@ const Contact = () => {
     setError({ ...error, [`${e.target.name}Err`]: '' });
   };
 
-  const requiredField = message => (
+  // JSX for required field message
+  const requiredFieldMessage = message => (
     <span className="contact-form__error-msg">{message}</span>
   );
 
   return (
     <section className="contact">
+      {/* modal */}
       {messageIsSent && (
         <MessageSentModal
           message={messageIsSent}
           setMessageIsSent={setMessageIsSent}
         />
       )}
+
       <Title title="napisz do nas" />
+
+      {/* form */}
       <form
         className="contact-form"
         onSubmit={handleSubmit}
@@ -89,6 +97,7 @@ const Contact = () => {
         method="post"
         noValidate
       >
+        {/* name */}
         <div className="contact-form__form-group">
           <label className="contact-form__label" htmlFor="name">
             imię
@@ -103,8 +112,9 @@ const Contact = () => {
             name="name"
             id="name"
           />
-          {nameErr && requiredField(nameErr)}
+          {nameErr && requiredFieldMessage(nameErr)}
         </div>
+        {/* email */}
         <div className="contact-form__form-group">
           <label className="contact-form__label" htmlFor="email">
             email
@@ -119,8 +129,9 @@ const Contact = () => {
             name="email"
             id="email"
           />
-          {emailErr && requiredField(emailErr)}
+          {emailErr && requiredFieldMessage(emailErr)}
         </div>
+        {/* subject */}
         <div className="contact-form__form-group">
           <label className="contact-form__label" htmlFor="subject">
             temat
@@ -136,8 +147,9 @@ const Contact = () => {
             id="subject"
             autoComplete="off"
           />
-          {subjectErr && requiredField(subjectErr)}
+          {subjectErr && requiredFieldMessage(subjectErr)}
         </div>
+        {/* message */}
         <div className="contact-form__form-group">
           <label className="contact-form__label" htmlFor="message">
             wiadomość
@@ -151,8 +163,9 @@ const Contact = () => {
             name="message"
             id="message"
           ></textarea>
-          {messageErr && requiredField(messageErr)}
+          {messageErr && requiredFieldMessage(messageErr)}
         </div>
+        {/* submit */}
         <div className="contact-form__form-group">
           <input
             className="contact-form__submit-btn"
