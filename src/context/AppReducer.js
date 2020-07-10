@@ -12,6 +12,11 @@ export default (state, action) => {
     case 'OPEN_CART':
       return {...state, cartOpen: true}
     
+    case 'SET_PRODUCTS':
+      return {...state, storeProducts: action.payload, filteredProducts: action.payload}
+
+    case 'SET_FEATURED_PRODUCTS':
+      return {...state, featuredProducts: action.payload}
     default:
       return state;
   }

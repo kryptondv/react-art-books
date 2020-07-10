@@ -70,7 +70,7 @@ export const items = [
              category: 'Art',
              description:
                'Basquiat first came to prominence when he collaborated with Al Diaz to spray-paint enigmatic statements under the pseudonym SAMO©. He went on to work on collages, Xerox art, postcards, performances, and music before establishing his reputation as one of the most important painters of his generation. Accompanying a major exhibition at the Barbican Art Gallery, this book opens with introductory essays from the curators, which place his practice in a wider art historical context and look at his career through the lens of performance. Six thematic chapters offer new research, with essays from poet Christian Campbell on SAMO©; curator Carlo McCormick on New York / New Wave; writer Glenn O’Brien on the downtown scene; academic Jordana Moore Saggese on Basquiat’s relationship to film and television; and music scholar Francesco Martinelli on Basquiat’s obsession with jazz. This insightful new survey also features extended captions, rare archival material, and extensive photography, demonstrating how Basquiat’s legacy remains more powerful and relevant than ever today.',
-             featured: true,
+             featured: false,
 
              image: { fields: { file: { url: book3 } } },
            },
@@ -219,7 +219,7 @@ export const items = [
              category: 'Design',
              description:
                'This comprehensive collection offers a thorough overview of typeface design from 1628 to the mid-20th century. Derived from a distinguished Dutch collection, a series of exquisitely designed catalogues traces the evolution of the printed letter via specimens in roman, italic, bold, semibold, narrow, and broad fonts. Borders, ornaments, initial letters, and decorations are also included, along with lithographic examples, letters by sign writers, inscription carvers, and calligraphers.',
-             featured: false,
+             featured: true,
              image: { fields: { file: { url: book13 } } },
            },
          },
