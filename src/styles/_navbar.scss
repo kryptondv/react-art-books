@@ -72,7 +72,7 @@
     background: transparent;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 0;
+    padding: .1rem;
 
     &__list {
       display: flex;
@@ -99,10 +99,15 @@
       cursor: pointer;
     }
 
+    &__cart--new-item {
+      animation: shake .3s ease 2;
+    }
+
     &__cart-items {
       right: 0;
       background: $color-primary;
       color: $color-white;
+      
     }
   }
 }
@@ -123,6 +128,8 @@
       height: 1rem;
       top: 10%;
       right: -5%;
+
+      
     }
   }
 }

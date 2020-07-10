@@ -28,3 +28,18 @@
     transform: scale(1);
   }
 }
+
+@keyframes shake{
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

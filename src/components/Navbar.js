@@ -1,10 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { ProductContext } from '../context/Context';
 
 const Navbar = () => {
   const { handleCart, handleNavbar, cartItems, navbarOpen } = useContext(ProductContext);
+  const [newItemAnimation, setNewItemAnimation] = useState(false)
+
+  useEffect(() => {
+    if(cartItems > 0) {
+      setNewItemAnimation(true)
+      setTimeout(() => {
+        setNewItemAnimation(false);
+      }, 200);
+    }
+    
+    
+  }, [cartItems])
 
   return (
     <nav className={`navbar ${navbarOpen && 'navbar--is-open'}`}>
@@ -25,9 +37,9 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <div className="navbar__cart" onClick={handleCart}>
+      <div className={`navbar__cart ${newItemAnimation && 'navbar__cart--new-item'}`} onClick={handleCart}>
         <FaCartPlus className="navbar__icon" />
-        <div className="navbar__cart-items">{cartItems}</div>
+        <div className="navbar__cart-items" >{cartItems}</div>
       </div>
     </nav>
   );

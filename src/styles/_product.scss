@@ -57,6 +57,19 @@
     }
   }
 
+  &__item-added-msg {
+    position: absolute;
+    bottom: -80%;
+    left: 0;
+    font-size: .7rem;
+    animation: fadeIn .2s ease-out;
+    background: #5618ffd2;
+    color: $color-white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
   &__name {
     text-transform: capitalize;
     padding: 0.5rem 0 0;

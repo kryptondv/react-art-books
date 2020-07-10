@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
@@ -7,6 +7,15 @@ import defaultImg from '../assets/img/products/book-0.png';
 const Product = ({ product }) => {
   const { addToCart, setSingleProduct } = useContext(ProductContext);
   const { title, image, id, price } = product;
+  const [itemAdded, setItemAdded] = useState(false)
+
+  const addItem = () => {
+    addToCart(id);
+    setItemAdded(true);
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 1500);
+  }
 
   return (
     <div className="product">
@@ -20,9 +29,10 @@ const Product = ({ product }) => {
           >
             <FaSearch />
           </Link>
-          <button className="product__icon" onClick={() => addToCart(id)}>
+          <button className="product__icon" onClick={addItem}>
             <FaCartPlus />
           </button>
+          {itemAdded && <span className="product__item-added-msg">Dodano do koszyka</span>}
         </div>
       </div>
       <p className="product__name">{title}</p>
