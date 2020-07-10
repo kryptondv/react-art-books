@@ -1,0 +1,30 @@
+.featured-products {
+  text-align: center;
+
+  &__btn {
+    margin-top: 2rem;
+  }
+}
+
+.featured-products-container {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+}
+
+@media screen and (min-width: 776px) {
+  .featured-products-container {
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .featured-products-container {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}

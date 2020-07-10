@@ -161,7 +161,7 @@ export const items = [
              category: 'Architecture',
              description:
                'This book is the first to offer a comprehensive collection of photographs and text on Soviet-era sanatoriums from Armenia to Uzbekistan. All the photographs are specially commissioned for the book, taken by a team of young photographers specialising in the post-Soviet territories.',
-             featured: true,
+             featured: false,
 
              image: { fields: { file: { url: book9 } } },
            },
