@@ -199,8 +199,8 @@ export const items = [
            sys: { id: 12 },
 
            fields: {
-             author: 'Caravaggio. Complete Works',
-             title: 'Sebastian Schütze',
+             author: 'Sebastian Schütze',
+             title: 'Caravaggio. Complete Works',
              price: 239,
              category: 'Art',
              description:

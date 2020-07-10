@@ -58,14 +58,19 @@
   }
 
   &__name {
-    background: rgba(255, 255, 255, 0.8);
-    width: 100%;
-    color: $color-black;
     text-transform: capitalize;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0;
     text-align: center;
     letter-spacing: 2px;
     font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  &__price {
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0.2rem 0;
+    font-size: .7rem;
     font-weight: 300;
   }
 }

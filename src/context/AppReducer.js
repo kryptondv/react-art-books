@@ -17,6 +17,13 @@ export default (state, action) => {
 
     case 'SET_FEATURED_PRODUCTS':
       return {...state, featuredProducts: action.payload}
+
+    case 'SET_CART':
+      return {...state, cart: action.payload}
+
+    case 'ADD_CART_ITEM':
+      return {...state, cartItems: state.cartItems + 1}
+      
     default:
       return state;
   }

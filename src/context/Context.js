@@ -73,8 +73,32 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+  const addCartItem = () => {
+    dispatch({
+      type: 'ADD_CART_ITEM'
+    })
+  }
+
   const addToCart = id => {
-    console.log(id);
+    let tempCart = [...state.cart];
+    const tempProducts = [...state.storeProducts];
+    let tempItem = tempCart.find(item => item.id === id);
+    if (!tempItem) {
+      tempItem = tempProducts.find(item => item.id === id);
+      let total = tempItem.price;
+      let cartItem = {...tempItem, count: 1, total};
+      tempCart = [...tempCart, cartItem]
+    } else {
+      tempItem.count++;
+      tempItem.total = tempItem.price * tempItem.count;
+    }
+
+    dispatch({
+      type: 'SET_CART',
+      payload: tempCart
+    })
+
+    addCartItem();
   };
 
   const setSingleProduct = id => {
