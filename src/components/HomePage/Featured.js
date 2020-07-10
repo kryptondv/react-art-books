@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Title from '../Title';
 import { ProductContext } from '../../context/Context';
-import Product from '../Product';
 import { Link } from 'react-router-dom';
+import Title from '../Title';
+import Product from '../Product';
 
 const Featured = () => {
   const { featuredProducts } = useContext(ProductContext);

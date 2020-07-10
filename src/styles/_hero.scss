@@ -41,6 +41,11 @@
     background: url('../assets//img/contactBg.jpg') center center/ cover no-repeat;
     max-height: 25vh;
   }
+
+  &--books {
+    background: url('../assets//img/about-1.jpg') center 65%/ cover no-repeat;
+    max-height: 25vh;
+  }
 }
 
 @media screen and (min-width: 360px) {

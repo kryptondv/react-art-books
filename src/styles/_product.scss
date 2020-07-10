@@ -1,13 +1,10 @@
 .product {
-  // box-shadow: $box-shadow-light;
   transition: $transition-main;
   animation: fadeIn 0.3s ease;
 
   &:hover {
-    // box-shadow: $box-shadow-dark;
-
     .product__img {
-      opacity: 0.3;
+      opacity: 0.5;
       transform: scale(1.1);
     }
 
