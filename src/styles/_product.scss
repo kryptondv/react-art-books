@@ -87,3 +87,11 @@
     font-weight: 300;
   }
 }
+
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .product__img {
+    max-width: 300px;
+    margin: 0 auto 1rem;
+  }
+}

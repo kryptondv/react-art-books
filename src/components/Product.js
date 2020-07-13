@@ -5,7 +5,7 @@ import { ProductContext } from '../context/Context';
 import defaultImg from '../assets/img/products/book-0.png';
 
 const Product = ({ product }) => {
-  const { addToCart, setSingleProduct } = useContext(ProductContext);
+  const { addToCart } = useContext(ProductContext);
   const { title, image, id, price } = product;
   const [itemAdded, setItemAdded] = useState(false)
 
@@ -25,7 +25,6 @@ const Product = ({ product }) => {
           <Link
             to={`/ksiazki/${id}`}
             className="product__icon"
-            onClick={() => setSingleProduct(id)}
           >
             <FaSearch />
           </Link>

@@ -8,13 +8,10 @@ const initialState = {
   cartItems: 0,
   cart: [],
   cartSubTotal: 0,
-  carTax: 0,
   cartTotal: 0,
   storeProducts: [],
   filteredProducts: [],
   featuredProducts: [],
-  singleProduct: {},
-  loading: false,
 };
 
 export const ProductContext = createContext();
@@ -73,12 +70,6 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
-  const addCartItem = () => {
-    dispatch({
-      type: 'ADD_CART_ITEM'
-    })
-  }
-
   const addToCart = id => {
     let tempCart = [...state.cart];
     const tempProducts = [...state.storeProducts];
@@ -86,23 +77,44 @@ export const ProductProvider = ({ children }) => {
     if (!tempItem) {
       tempItem = tempProducts.find(item => item.id === id);
       let total = tempItem.price;
-      let cartItem = {...tempItem, count: 1, total};
-      tempCart = [...tempCart, cartItem]
+      let cartItem = { ...tempItem, count: 1, total };
+      tempCart = [...tempCart, cartItem];
     } else {
       tempItem.count++;
       tempItem.total = tempItem.price * tempItem.count;
     }
 
-    dispatch({
-      type: 'SET_CART',
-      payload: tempCart
-    })
-
-    addCartItem();
+    setCart(tempCart);
+    getTotals(tempCart);
+    setCartItems(tempCart);
   };
 
-  const setSingleProduct = id => {
-    console.log(id);
+  const setCart = cart => {
+    dispatch({
+      type: 'SET_CART',
+      payload: cart,
+    });
+  };
+
+  const setCartItems = cart => {
+    let itemsCount = 0;
+    cart.forEach(product => (itemsCount += product.count));
+    dispatch({
+      type: 'SET_CART_ITEMS',
+      payload: itemsCount,
+    });
+  };
+
+  const getTotals = cart => {
+    let price = 0;
+    cart.forEach(product => {
+      price += product.total * product.count;
+    });
+
+    dispatch({
+      type: 'GET_TOTALS',
+      payload: price,
+    });
   };
 
   return (
@@ -114,7 +126,6 @@ export const ProductProvider = ({ children }) => {
         closeCart,
         openCart,
         addToCart,
-        setSingleProduct,
       }}
     >
       {children}

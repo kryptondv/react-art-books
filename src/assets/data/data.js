@@ -18,7 +18,7 @@ import book16 from '../img/products/book-16.png';
 
 export const items = [
          {
-           sys: { id: 0 },
+           sys: { id: 'd3c5f2fd-b9b3-4a42-8e15-268c2be771db' },
            fields: {
              author: 'Elizabeth Wilhide',
              title: 'Design. The Whole Story',
@@ -31,13 +31,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 1 },
+           sys: { id: 'd020cbdb-5c97-4d9f-b71b-aa3c4f71a731' },
 
            fields: {
              author: 'Oliver Elser, Philip Kurz',
              title: 'SOS Brutalism. A Global Survey',
              price: 269,
-             category: 'Architecture',
+             category: 'Architektura',
              description:
                'Widely disliked in their heyday and only recently beginning to be appreciated, brutalist buildings around the world are at risk of being lost—in many cases to demolition, and in some to insensitive reconstructions that would forever alter buildings’ appearance beyond recognition. SOS Brutalism is a distress signal, an attempt to galvanize public awareness of the architectural heritage that is at risk of being forever lost. The book, result of a major collaborative research undertaking by Deutsches Architektur Museum DAM and Wüstenrot Foundation, presents a global survey of brutalist architecture of the 1950s, ’60s, and ’70s, covering around 120 key buildings from the period from around the world, many of them little-known and in imminent danger of destruction. Case studies of hotspots such as the Macedonian capital Skopje or New Haven, Connecticut, and essays on the history and theory of brutalism round out this groundbreaking and lavishly illustrated book.',
              featured: true,
@@ -46,13 +46,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 2 },
+           sys: { id: '2b62af0e-f537-417f-8541-dc7a5d8276f2' },
 
            fields: {
              author: 'Harry Gruyaert',
              title: 'Last Call',
              price: 129,
-             category: 'Photography',
+             category: 'Fotografia',
              description:
                'A new collection from the award-winning Magnum photographer. Alongside American photographers such as Saul Leiter, Joel Meyerowitz, Stephen Shore and William Eggleston, Harry Gruyaert became one of the few European pioneers to explore the creative possibilities of colour in the 1970s and 1980s. The previous decades had elevated black and white photography to the realms of art, relegating colour to use in advertising, the press and illustration. Gruyaert’s work suggested new territory for colour photography: an emotive, non-narrative and boldly graphic way of perceiving the world.',
              featured: false,
@@ -61,13 +61,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 3 },
+           sys: { id: 'e7fad380-bc60-4abd-bfcc-03f0090a4ccf' },
 
            fields: {
              author: 'Dieter Buchhart, Eleanor Nairne, Lotte Johnson',
              title: 'Basquiat. Boom for Real',
              price: 165,
-             category: 'Art',
+             category: 'Sztuka',
              description:
                'Basquiat first came to prominence when he collaborated with Al Diaz to spray-paint enigmatic statements under the pseudonym SAMO©. He went on to work on collages, Xerox art, postcards, performances, and music before establishing his reputation as one of the most important painters of his generation. Accompanying a major exhibition at the Barbican Art Gallery, this book opens with introductory essays from the curators, which place his practice in a wider art historical context and look at his career through the lens of performance. Six thematic chapters offer new research, with essays from poet Christian Campbell on SAMO©; curator Carlo McCormick on New York / New Wave; writer Glenn O’Brien on the downtown scene; academic Jordana Moore Saggese on Basquiat’s relationship to film and television; and music scholar Francesco Martinelli on Basquiat’s obsession with jazz. This insightful new survey also features extended captions, rare archival material, and extensive photography, demonstrating how Basquiat’s legacy remains more powerful and relevant than ever today.',
              featured: false,
@@ -76,7 +76,7 @@ export const items = [
            },
          },
          {
-           sys: { id: 4 },
+           sys: { id: '5f2d474f-838d-4ca6-9d2b-3c65d47da472' },
 
            fields: {
              author: 'Magdalena Droste',
@@ -91,13 +91,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 5 },
+           sys: { id: '5325bbec-1214-434a-a197-5cabb13e8f82' },
 
            fields: {
              author: 'Annie Leibovitz',
              title: 'Annie Leibovitz at Work',
              price: 175,
-             category: 'Photography',
+             category: 'Fotografia',
              description:
                'Leibovitz addresses young photographers and readers interested in what photographers do, but any reader interested in contemporary history will be fascinated by her account of one of the richest bodies of work in the photographic canon. The subjects include photojournalism, studio work, photographing dancers and athletes, working with writers, and making the transition from shooting with film to working with digital cameras. Originally published in 2008, this revised and updated edition brings Leibovitz’s bestselling book back into print.',
              featured: false,
@@ -107,13 +107,13 @@ export const items = [
          },
 
          {
-           sys: { id: 6 },
+           sys: { id: '02d7fd94-0066-437e-9ab8-65d30d256d50' },
 
            fields: {
              author: 'Roger Keyes, Timothy Clark',
              title: 'Hokusai. Beyond the Great Wave',
              price: 159,
-             category: 'Art',
+             category: 'Sztuka',
              description:
                'Hokusai created sublime works during the last thirty years of his life, right up to his death at the age of ninety. Publications have hitherto presented his long career as a chronological sequence. This book takes a fresh approach based on innovative scholarship: thematic groupings of works are related to the major spiritual and artistic quests of Hokusai’s life.',
              featured: false,
@@ -122,13 +122,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 7 },
+           sys: { id: '3c51089d-2e96-4737-9201-ded860e21fd6' },
 
            fields: {
              author: 'Cohen Jean-Louis',
              title: 'Le Corbusier. Le Grand',
              price: 199,
-             category: 'Architecture',
+             category: 'Architektura',
              description:
                'Drawing on an array of archival material, including sketches, photographs, and correspondences, Le Corbusier Le Grand depicts in roughly chronological order not only the vast and varied output of Le Corbusier, but also the major events, people, and forces that shaped the life of an artist who continues to fascinate those in and outside the architectural world.',
              featured: false,
@@ -137,13 +137,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 8 },
+           sys: { id: '52256103-c9e7-413e-9ca2-f07211ff96ae' },
 
            fields: {
              author: 'Masanao Amano',
              title: '100 Manga Artists',
              price: 75,
-             category: 'Art',
+             category: 'Sztuka',
              description:
                'Since the original TASCHEN edition of Manga Design, Japan’s comic phenomenon has produced yet more captivating characters and a whole host of hot new talents. This revised and updated edition delivers the lowdown on the latest and the greatest makers and shapers of the manga scene.',
              featured: true,
@@ -152,13 +152,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 9 },
+           sys: { id: '86982aef-bc3f-4189-af31-cf2abafbe3df' },
 
            fields: {
              author: 'Maryam Omidi',
              title: 'Holidays in Soviet Sanatoriums',
              price: 89,
-             category: 'Architecture',
+             category: 'Architektura',
              description:
                'This book is the first to offer a comprehensive collection of photographs and text on Soviet-era sanatoriums from Armenia to Uzbekistan. All the photographs are specially commissioned for the book, taken by a team of young photographers specialising in the post-Soviet territories.',
              featured: false,
@@ -167,7 +167,7 @@ export const items = [
            },
          },
          {
-           sys: { id: 10 },
+           sys: { id: '22db1f5b-32a8-4afc-bf86-092c6cd11518' },
 
            fields: {
              author: 'Sandra Rendgen',
@@ -182,13 +182,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 11 },
+           sys: { id: 'a921c230-fe07-491e-8f9c-736ae704a135' },
 
            fields: {
              author: 'Francesco Spampinato',
              title: 'Art Record Covers',
              price: 239,
-             category: 'Art',
+             category: 'Sztuka',
              description:
                'Since the dawn of modernism, visual and music production have had a particularly intimate relationship. From Luigi Russolo’s 1913 Futurist manifesto L’Arte dei Rumori (The Art of Noise) to Marcel Duchamp’s 1925 double-sided discs Rotoreliefs, the 20th century saw ever more fertile exchange between sounds and shapes, marks and melodies, and different fields of composition and performance.',
              featured: false,
@@ -196,13 +196,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 12 },
+           sys: { id: 'fe457101-16c2-4a7a-95c7-80e128a0b381' },
 
            fields: {
              author: 'Sebastian Schütze',
              title: 'Caravaggio. Complete Works',
              price: 239,
-             category: 'Art',
+             category: 'Sztuka',
              description:
                'Caravaggio, or more accurately Michelangelo Merisi da Caravaggio (1571–1610), was always a name to be reckoned with. Notorious bad boy of Italian painting, the artist was at once celebrated and controversial: Violent in temper, precise in technique, a creative master, and a man on the run.',
              featured: false,
@@ -210,7 +210,7 @@ export const items = [
            },
          },
          {
-           sys: { id: 13 },
+           sys: { id: '023b9647-4a27-490b-9502-5889cd3cb3c8' },
 
            fields: {
              author: 'Alston W. Purvis, Cees W. de Jong, Jan Tholenaar',
@@ -224,13 +224,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 14 },
+           sys: { id: '578c0680-2d01-44d6-83d5-d61fdf333c77' },
 
            fields: {
              author: 'Philip Jodidio',
              title: 'Ando. Complete Works 1975–Today.',
              price: 239,
-             category: 'Architecture',
+             category: 'Architektura',
              description:
                'Discover the completely unique aesthetic of Tadao Ando, the only architect ever to have won the discipline’s four most prestigious prizes: the Pritzker, Carlsberg, Praemium Imperiale, and Kyoto Prize. Philippe Starck defines him as a “mystic in a country which is no longer mystic.” Philip Drew calls his buildings “land art” as they “struggle to emerge from the earth.” His designs have been described as haiku crafted from concrete, water, light, and space. But to Ando, true architecture is not expressed in metaphysics or beauty, but rather through space that embodies physical wisdom.',
              featured: false,
@@ -238,13 +238,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 15 },
+           sys: { id: '1b7d9250-5528-4ea0-ab41-0c6fbdd76581' },
 
            fields: {
              author: 'Sebastiao Salgado',
              title: 'Genesis',
              price: 239,
-             category: 'Photography',
+             category: 'Fotografia',
              description:
                'On a very fortuitous day in 1970, 26-year-old Sebastião Salgado held a camera for the first time. When he looked through the viewfinder, he experienced a revelation: suddenly life made sense. From that day onward—though it took years of hard work before he had the experience to earn his living as a photographer—the camera became his tool for interacting with the world. Salgado, who “always preferred the chiaroscuro palette of black-and-white images,” shot very little color in his early career before giving it up completely.',
              featured: false,
@@ -252,13 +252,13 @@ export const items = [
            },
          },
          {
-           sys: { id: 16 },
+           sys: { id: '00844bdb-259e-4a13-8ac4-7abbc568d64a' },
 
            fields: {
              author: 'Stephen McLaren',
              title: 'Magnum Streetwise',
              price: 384,
-             category: 'Photography',
+             category: 'Fotografia',
              description:
                'Magnum Streetwise is an unmissable tour through the photographs and practices that have helped define what street photography is and can be. Magnum photographers such as Henri Cartier-Bresson pioneered ‘modern’ concepts of street photography before the term was even coined – but their influence is far from historic. A rich seam of street photography runs through the heart of Magnum to this day, both in the work of recognized masters of street photography – such as Erwitt, Parr, Gilden and Kalvar – and of those who might not even consider themselves street photographers; a continued influence that has not gone unnoticed among the current generation of budding street photographers and fans.',
              featured: false,
