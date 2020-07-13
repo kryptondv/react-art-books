@@ -1,0 +1,7 @@
+.loading {
+  font-size: 2rem;
+  padding: 5rem 1rem;
+  height: calc(75vh - 2.5rem - 151px);
+  text-align: center;
+  animation: fadeIn .7s alternate infinite;
+}
