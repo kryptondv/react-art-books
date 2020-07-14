@@ -3,7 +3,8 @@ import { ProductContext } from '../context/Context';
 import { Link } from 'react-router-dom';
 
 const Sidecart = () => {
-  const { cartOpen, closeCart, cart, cartTotal } = useContext(ProductContext);
+  const { cartOpen, closeCart, cart, cartTotal, handleNavbar } = useContext(ProductContext);
+  
 
   const renderHelper = () => {
     if(cart.length > 0) {
@@ -35,6 +36,7 @@ const Sidecart = () => {
               })}
             </h4>
             <Link
+            onClick={handleNavbar}
               to="/koszyk"
               className="btn btn--small sidecart__btn"
             >
@@ -45,7 +47,7 @@ const Sidecart = () => {
         </>
       );
     } else {
-      return <h3>Koszyk jest pusty</h3>
+      return <h3 className="sidecart__empty">Koszyk jest pusty :(</h3>
     }
   }
 
