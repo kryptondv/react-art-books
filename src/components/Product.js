@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
@@ -9,13 +9,21 @@ const Product = ({ product }) => {
   const { title, image, id, price } = product;
   const [itemAdded, setItemAdded] = useState(false)
 
+
   const addItem = () => {
     addToCart(id);
     setItemAdded(true);
-    setTimeout(() => {
+  }
+  
+  useEffect(() => {
+    let itemAddedMessageTimeout = setTimeout(() => {
       setItemAdded(false);
     }, 1500);
-  }
+
+    return(() => {
+      clearTimeout(itemAddedMessageTimeout);
+    })
+  }, [itemAdded])
 
   return (
     <div className="product">

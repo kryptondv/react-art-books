@@ -8,15 +8,20 @@ const Navbar = () => {
   const [newItemAnimation, setNewItemAnimation] = useState(false)
 
   useEffect(() => {
-    if(cartItems > 0) {
-      setNewItemAnimation(true)
-      setTimeout(() => {
-        setNewItemAnimation(false);
-      }, 200);
+    
+    let setAnimationFalseTimeout;
+    if (cartItems > 0) {
+      setNewItemAnimation(true);
+      setAnimationFalseTimeout = setTimeout(()=> {
+      setNewItemAnimation(false)
+    }, 200); 
     }
-    
-    
+    return () => {
+      clearTimeout(setAnimationFalseTimeout);
+    }
   }, [cartItems])
+
+
 
   return (
     <nav className={`navbar ${navbarOpen && 'navbar--is-open'}`}>

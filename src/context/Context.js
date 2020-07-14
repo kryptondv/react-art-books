@@ -7,7 +7,6 @@ const initialState = {
   cartOpen: false,
   cartItems: 0,
   cart: [],
-  cartSubTotal: 0,
   cartTotal: 0,
   storeProducts: [],
   filteredProducts: [],
@@ -96,6 +95,25 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+  const incrementProductCount = id => {
+    console.log(id);
+  }
+
+  const decrementProductCount = id => {
+    console.log(id);
+  }
+
+  const removeProduct = id => {
+    console.log(id);
+  }
+
+  const clearCart = () => {
+    const tempCart = [];
+    setCart(tempCart);
+    getTotals(tempCart);
+    setCartItems(tempCart);
+  }
+
   const setCartItems = cart => {
     let itemsCount = 0;
     cart.forEach(product => (itemsCount += product.count));
@@ -126,6 +144,10 @@ export const ProductProvider = ({ children }) => {
         closeCart,
         openCart,
         addToCart,
+        incrementProductCount,
+        decrementProductCount,
+        removeProduct,
+        clearCart
       }}
     >
       {children}

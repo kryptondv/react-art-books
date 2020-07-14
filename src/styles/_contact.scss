@@ -32,8 +32,8 @@
     
     &:focus {
       outline: none;
-      border-color: lighten($color-lightgrey, 20%);
-      box-shadow: 0 0 4px lighten($color-lightgrey, 35%);
+      border-color: lighten($color-lightgrey, 40%);
+      box-shadow: 0 0 4px lighten($color-lightgrey, 50%);
     }
 
     &--message {

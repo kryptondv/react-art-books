@@ -26,19 +26,22 @@ const Sidecart = () => {
               </li>
             ))}
           </ul>
-          <h4 className="sidecart__total">
-            Suma:
-            {cartTotal.toLocaleString('pl-PL', {
-              style: 'currency',
-              currency: 'PLN',
-            })}
-          </h4>
-          <Link
-            to="/koszyk"
-            className="btn btn--small sidecart__btn"
-          >
-            Zobacz koszyk
-          </Link>
+          <div className="sidecart__suma">
+            <h4 className="sidecart__total">
+              Suma:
+              {cartTotal.toLocaleString('pl-PL', {
+                style: 'currency',
+                currency: 'PLN',
+              })}
+            </h4>
+            <Link
+              to="/koszyk"
+              className="btn btn--small sidecart__btn"
+            >
+              Zobacz koszyk
+            </Link>
+
+          </div>
         </>
       );
     } else {

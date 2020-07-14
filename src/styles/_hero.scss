@@ -32,7 +32,8 @@
     min-height: 15.5rem;
   }
 
-  &--about {
+  &--about,
+  &--cart {
     background: url('../assets//img/aboutBg.jpg') center 65%/ cover no-repeat;
     max-height: 25vh;
   }
