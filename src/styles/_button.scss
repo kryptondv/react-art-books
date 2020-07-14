@@ -13,23 +13,29 @@
   font-family: 'Raleway', sans-serif;
   border: 1px solid $color-primary;
 
+
   &:hover {
-    // background: darken($color-primary, 20%);
     background: $color-white;
     color: $color-primary;
   }
-}
 
-@media screen and (min-width: 768px) {
-  .btn {
+  @media screen and (min-width: 768px) {
     font-size: 1.3rem;
     padding: 0.6rem 1.6rem;
   }
-}
 
-@media screen and (max-height: 568px) {
-  .btn {
+  @media screen and (max-height: 568px) {
     font-size: .9rem;
     padding: 0.4rem 1rem;
   }
+
+  &--small {
+    font-size: 0.7rem;
+    @media screen and (min-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
 }
+
+

@@ -29,7 +29,7 @@ export default (state, action) => {
       return { ...state, cartItems: action.payload };
 
     case 'GET_TOTALS':
-      return { ...state, totals: action.payload };
+      return { ...state, cartTotal: action.payload };
 
     default:
       return state;
