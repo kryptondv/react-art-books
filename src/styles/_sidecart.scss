@@ -3,6 +3,7 @@
   right: 0;
   top: 80px;
   background: $color-white;
+  padding-top: .5rem;
   height: calc(100% - 80px);
   width: 70%;
   max-width: 20rem;
@@ -31,7 +32,6 @@
   }
 
   &__empty {
-    // justify-self: center;
     height: 100%;
     display: flex;
     align-items: center;
