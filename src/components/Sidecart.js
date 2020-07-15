@@ -1,10 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { ProductContext } from '../context/Context';
 import { Link } from 'react-router-dom';
 
 const Sidecart = () => {
   const { cartOpen, closeCart, cart, cartTotal, handleNavbar } = useContext(ProductContext);
   
+  useEffect(() => {
+    const closeCartOnOutsideClick = e => {
+      if (cartOpen && !sideCartRef.current.contains(e.target)) {
+        closeCart();
+      }
+    }
+    window.addEventListener('click', closeCartOnOutsideClick)
+    return () => {
+      window.removeEventListener('click', closeCartOnOutsideClick)
+    }
+  }, [cartOpen, closeCart])
+
+  
+  const sideCartRef = useRef();
 
   const renderHelper = () => {
     if(cart.length > 0) {
@@ -55,6 +69,7 @@ const Sidecart = () => {
     <div
       className={`sidecart ${cartOpen && 'sidecart--is-open'}`}
       onClick={closeCart}
+      ref={sideCartRef}
     >
       {renderHelper()}
     </div>
