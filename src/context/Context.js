@@ -109,14 +109,14 @@ export const ProductProvider = ({ children }) => {
   const decrementProductCount = id => {
     const tempCart = [...state.cart];
     const item = tempCart.find(item => item.id === id);
-    const itemIndex = tempCart.findIndex(item => item.id === id);
     item.count--;
     if(item.count<=0) {
-      tempCart.splice(itemIndex, 1)
+      removeProduct(id)
+    } else {
+      setCart(tempCart);
+      getTotals(tempCart);
+      setCartItems(tempCart);
     }
-    setCart(tempCart);
-    getTotals(tempCart);
-    setCartItems(tempCart);
   }
 
   const removeProduct = id => {
