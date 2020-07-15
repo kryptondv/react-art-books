@@ -147,7 +147,7 @@ export const ProductProvider = ({ children }) => {
   const getTotals = cart => {
     let price = 0;
     cart.forEach(product => {
-      price += product.total * product.count;
+      price += product.price * product.count;
     });
 
     dispatch({

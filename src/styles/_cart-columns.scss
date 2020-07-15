@@ -2,16 +2,19 @@
   display: none;
   width: 100%;
   padding: 1rem;
+  max-width: 1700px;
+  margin: 0 auto;
 
 
   &__item {
-    flex-grow: 1;
-    text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.9rem;
+    text-align: center;
   }
-  @media screen  and (min-width: 1024px){
-    display: flex;
+  @media screen  and (min-width: 768px){
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1rem;
   }
 }
