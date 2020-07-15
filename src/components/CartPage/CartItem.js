@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../context/Context';
+import { Link } from 'react-router-dom';
 import {
   FaTrash,
   FaChevronCircleUp,
@@ -17,18 +18,24 @@ const CartItem = ({ product }) => {
 
   return (
     <div className="cart-item">
-      <div className="cart-item__field">
-        <img src={image} alt="cover" />
+      <Link
+        to={`/ksiazki/${id}`}
+        
+      >
+        <img className="cart-item__img" src={image} alt="cover" />
+      </Link>
+
+      <div className="cart-item__title">
         <h4>{title}</h4>
       </div>
 
-      <div className="cart-item__field">{author}</div>
+      <div className="cart-item__author">{author}</div>
 
-      <div className="cart-item__field">
+      <div className="cart-item__price">
         {price.toLocaleString('pl-PL', { style: 'currency', currency: 'PLN' })}
       </div>
 
-      <div className="cart-item__field">
+      <div className="cart-item__count">
         <FaChevronCircleDown
           onClick={() => decrementProductCount(id)}
           className="cart-item__icon"
@@ -39,13 +46,13 @@ const CartItem = ({ product }) => {
           className="cart-item__icon"
         />
       </div>
-      <div className="cart-item__field">
+      <div className="cart-item__trash">
         <FaTrash
           onClick={() => removeProduct(id)}
-          className="cart-item__icon"
+          className="cart-item__icon cart-item__icon--remove"
         />
       </div>
-      <div className="cart-item__field">
+      <div className="cart-item__total">
         {(price * count).toLocaleString('pl-PL', {
           style: 'currency',
           currency: 'PLN',

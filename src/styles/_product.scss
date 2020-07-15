@@ -1,6 +1,7 @@
 .product {
   transition: $transition-main;
   animation: fadeIn 0.3s ease;
+  position: relative;
 
   &:hover {
     .product__img {
@@ -94,4 +95,21 @@
     max-width: 300px;
     margin: 0 auto 1rem;
   }
+}
+
+@media (hover: none) {
+   .product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    
+   }
+
+   .product--clicked::before {
+    display: none;
+   }
 }

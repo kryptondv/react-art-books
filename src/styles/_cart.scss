@@ -1,0 +1,8 @@
+.cart {
+  padding: 1rem;
+  &__empty {
+    text-align: center;
+    padding-top: 2rem;
+    height: calc(75vh - 348px);
+  }
+}

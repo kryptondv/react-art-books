@@ -3,25 +3,26 @@ import { ProductContext } from '../context/Context';
 import { Link } from 'react-router-dom';
 
 const Sidecart = () => {
-  const { cartOpen, closeCart, cart, cartTotal, handleNavbar } = useContext(ProductContext);
-  
+  const { cartOpen, closeCart, cart, cartTotal, handleNavbar } = useContext(
+    ProductContext
+  );
+
   useEffect(() => {
     const closeCartOnOutsideClick = e => {
       if (cartOpen && !sideCartRef.current.contains(e.target)) {
         closeCart();
       }
-    }
-    window.addEventListener('click', closeCartOnOutsideClick)
+    };
+    window.addEventListener('click', closeCartOnOutsideClick);
     return () => {
-      window.removeEventListener('click', closeCartOnOutsideClick)
-    }
-  }, [cartOpen, closeCart])
+      window.removeEventListener('click', closeCartOnOutsideClick);
+    };
+  }, [cartOpen, closeCart]);
 
-  
   const sideCartRef = useRef();
 
   const renderHelper = () => {
-    if(cart.length > 0) {
+    if (cart.length > 0) {
       return (
         <>
           <ul className="sidecart__list">
@@ -50,20 +51,19 @@ const Sidecart = () => {
               })}
             </h4>
             <Link
-            onClick={handleNavbar}
+              onClick={handleNavbar}
               to="/koszyk"
               className="btn btn--small sidecart__btn"
             >
               Zobacz koszyk
             </Link>
-
           </div>
         </>
       );
     } else {
-      return <h3 className="sidecart__empty">Koszyk jest pusty :(</h3>
+      return <h3 className="sidecart__empty">Koszyk jest pusty :(</h3>;
     }
-  }
+  };
 
   return (
     <div
