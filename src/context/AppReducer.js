@@ -31,6 +31,42 @@ export default (state, action) => {
     case 'GET_TOTALS':
       return { ...state, cartTotal: action.payload };
 
+    case 'SET_PRICES':
+      return {
+        ...state,
+        price: action.payload.maxPrice,
+        maxPrice: action.payload.maxPrice,
+        minPrice: action.payload.minPrice,
+      };
+
+    case 'CHANGE_FILTER_VALUE':
+      const value = action.payload.value;
+      const name = action.payload.name;
+      return { ...state, [name]: value };
+
+    case 'FILTER_PRODUCTS':
+      const { storeProducts, search, category, price } = { ...state };
+      let filteredProducts = [...storeProducts];
+
+      // filter by search term
+      filteredProducts = filteredProducts.filter(product =>
+        product.title.toLowerCase().includes(search.toLowerCase())
+      );
+
+      // filter by category
+      if (category !== 'wszystkie') {
+        filteredProducts = filteredProducts.filter(
+          product => product.category === category
+        );
+      }
+
+      // filter by price
+      filteredProducts = filteredProducts.filter(
+        product => product.price <= price
+      );
+
+      return { ...state, filteredProducts };
+
     default:
       return state;
   }

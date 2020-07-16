@@ -5,6 +5,7 @@
   align-items: center;
   margin: 0 1rem;
   max-width: 1500px;
+  min-width: 286px;
   animation: fadeIn 1s ease;
 
   &__banner {
@@ -68,12 +69,17 @@
 @media screen and (min-width: 768px) {
   .hero {
     padding: 3rem;
+    
     &__title {
       font-size: 5rem;
     }
-
+    
     &__btn {
       margin-top: 1.2rem;
+    }
+    
+    &--home {
+      min-height: 550px;
     }
   }
 }
@@ -85,7 +91,7 @@
     }
 
     &--home {
-      min-height: 39.5rem;
+      min-height: 530px;
     }
   }
 }

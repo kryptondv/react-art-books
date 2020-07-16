@@ -3,15 +3,29 @@ import Product from '../Product';
 import { ProductContext } from '../../context/Context';
 
 const ProductList = () => {
-  const { filteredProducts } = useContext(ProductContext)
+  const { filteredProducts } = useContext(ProductContext);
+
+  const renderHelper = () => {
+    if (filteredProducts.length > 0) {
+      return (
+        <div className="product-list-container">
+          {filteredProducts.map(product => (
+            <Product key={product.id} product={product} />
+          ))}
+        </div>
+      );
+    } else {
+      return (
+        <h2 className="product-list__empty-search">
+          Żaden produkt nie spełnia podanych kryteriów
+        </h2>
+      );
+    }
+  };
 
   return (
     <section className="product-list">
-      <div className="product-list-container">
-        {filteredProducts.map(product => (
-          <Product key={product.id} product={product} />
-        ))}
-      </div>
+      {renderHelper()}
     </section>
   );
 };

@@ -1,0 +1,52 @@
+.filter-form {
+  width: 60vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    // background: yellow;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  &__label {
+    display: block;
+    letter-spacing: 1px;
+  }
+
+  &__form-control {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+
+    &--select,
+    &--search {
+      padding: 0.2rem;
+      border-radius: 5px;
+      border: 1px solid lighten($color-lightgrey, 40%);
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 4px lighten($color-lightgrey, 40%);
+      }
+    }
+
+    &--search {
+      padding-left: .5rem;
+    }
+
+  }
+  
+  &__option {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 30%;
+  }
+}

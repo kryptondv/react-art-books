@@ -11,6 +11,11 @@ const initialState = {
   storeProducts: [],
   filteredProducts: [],
   featuredProducts: [],
+  search: '',
+  price: 0,
+  minPrice: 0,
+  maxPrice: 0,
+  category: 'wszystkie',
 };
 
 export const ProductContext = createContext();
@@ -32,6 +37,9 @@ export const ProductProvider = ({ children }) => {
       return product;
     });
     const featuredProducts = storeProducts.filter(product => product.featured);
+    const productPrices = storeProducts.map(product => product.price);
+    const maxPrice = Math.max(...productPrices);
+    const minPrice = Math.min(...productPrices);
 
     // set state
     dispatch({
@@ -42,6 +50,11 @@ export const ProductProvider = ({ children }) => {
     dispatch({
       type: 'SET_FEATURED_PRODUCTS',
       payload: featuredProducts,
+    });
+
+    dispatch({
+      type: 'SET_PRICES',
+      payload: { maxPrice, minPrice },
     });
   };
 
@@ -97,27 +110,26 @@ export const ProductProvider = ({ children }) => {
 
   const incrementProductCount = id => {
     const tempCart = [...state.cart];
-    const item = tempCart.find((item) => item.id === id);
-    
+    const item = tempCart.find(item => item.id === id);
+
     item.count++;
     setCart(tempCart);
     getTotals(tempCart);
     setCartItems(tempCart);
-
-  }
+  };
 
   const decrementProductCount = id => {
     const tempCart = [...state.cart];
     const item = tempCart.find(item => item.id === id);
     item.count--;
-    if(item.count<=0) {
-      removeProduct(id)
+    if (item.count <= 0) {
+      removeProduct(id);
     } else {
       setCart(tempCart);
       getTotals(tempCart);
       setCartItems(tempCart);
     }
-  }
+  };
 
   const removeProduct = id => {
     const tempCart = [...state.cart];
@@ -126,14 +138,14 @@ export const ProductProvider = ({ children }) => {
     setCart(tempCart);
     getTotals(tempCart);
     setCartItems(tempCart);
-  }
+  };
 
   const clearCart = () => {
     const tempCart = [];
     setCart(tempCart);
     getTotals(tempCart);
     setCartItems(tempCart);
-  }
+  };
 
   const setCartItems = cart => {
     let itemsCount = 0;
@@ -156,6 +168,17 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+ const handleChange = ({ target }) => {
+   dispatch({
+     type: 'CHANGE_FILTER_VALUE',
+     payload: target,
+   });
+
+   dispatch({
+     type: 'FILTER_PRODUCTS',
+   });
+ };
+
   return (
     <ProductContext.Provider
       value={{
@@ -168,7 +191,8 @@ export const ProductProvider = ({ children }) => {
         incrementProductCount,
         decrementProductCount,
         removeProduct,
-        clearCart
+        clearCart,
+        handleChange
       }}
     >
       {children}
