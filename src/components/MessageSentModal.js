@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MessageSentModal = ({ message, setMessageIsSent }) => {
+const MessageSentModal = ({ message, setMessageIsSent, subtitle }) => {
 
   const success = message === 'success';
 
@@ -12,7 +12,7 @@ const MessageSentModal = ({ message, setMessageIsSent }) => {
           {success ? 'Dziękujemy' : 'Ooops'}
         </h2>
         <p className="message-sent-modal__subtitle">
-          {success ? 'Wkrótce wyślemy odpowiedź :)' : 'Coś poszło nie tak'}
+          {success ? subtitle : 'Coś poszło nie tak'}
         </p>
         {success ? (
           <Link to={'/'} className="btn hero__btn message-sent-modal__btn">

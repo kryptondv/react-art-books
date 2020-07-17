@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../context/Context';
+import { Link } from 'react-router-dom';
 
 const CartTotal = () => {
   const { cartTotal, clearCart } = useContext(ProductContext);
@@ -12,7 +13,8 @@ const CartTotal = () => {
           currency: 'PLN',
         })}
       </h4>
-      <button onClick={clearCart} className="btn btn--small cart-total__btn">Wyczyść koszyk</button>
+      <Link to="/zamowienie" className="btn btn--small cart-total__btn">Zamawiam</Link>
+      <button onClick={clearCart} className="btn btn--small btn--secondary cart-total__btn">Wyczyść koszyk</button>
     </section>
   );
 };

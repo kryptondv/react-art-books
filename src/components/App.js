@@ -7,6 +7,7 @@ import ErrorPage from '../pages/ErrorPage';
 import HomePage from '../pages/HomePage';
 import ProductsPage from '../pages/ProductsPage';
 import SingleProductPage from '../pages/SingleProductPage';
+import CheckoutPage from '../pages/CheckoutPage';
 import Topbar from './Topbar';
 import Sidecart from './Sidecart';
 import Footer from './Footer';
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path="/ksiazki" component={ProductsPage} />
         <Route path="/ksiazki/:slug" component={SingleProductPage} />
         <Route path="/koszyk" component={CartPage} />
+        <Route path="/zamowienie" component={CheckoutPage} />
         <Route component={ErrorPage} />
       </Switch>
       <Footer />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Title from '../Title';
-import MessageSentModal from './MessageSentModal';
+import MessageSentModal from '../MessageSentModal';
 import encode from '../../functions/encodeURI';
 
 const Contact = () => {
@@ -84,6 +84,7 @@ const Contact = () => {
         <MessageSentModal
           message={messageIsSent}
           setMessageIsSent={setMessageIsSent}
+          subtitle="Wkrótce wyślemy odpowiedź :)"
         />
       )}
 

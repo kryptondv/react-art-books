@@ -36,6 +36,16 @@
     }
   }
 
+  &--secondary {
+    background: $color-white;
+    color: $color-lightgrey;
+    border-color: $color-lightgrey;
+    &:hover {
+      background: $color-lightgrey;
+      color: $color-white;
+    }
+  }
+
 }
 
 
