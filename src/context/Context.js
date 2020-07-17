@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
-import { items } from '../assets/data/data';
+// import { items } from '../assets/data/data';
+import { client } from './contentful';
 
 const initialState = {
   navbarOpen: false,
@@ -18,6 +19,7 @@ const initialState = {
   category: 'wszystkie',
 };
 
+
 export const ProductContext = createContext();
 
 // Provider component
@@ -25,14 +27,20 @@ export const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   useEffect(() => {
-    setProducts(items);
+    client
+      .getEntries({
+        content_type: 'artbooks',
+      })
+      .then(entry => setProducts(entry.items))
+      .catch(err => console.log(err));
   }, []);
 
   const setProducts = products => {
     // format data
+    console.log(products)
     const storeProducts = products.map(item => {
       const { id } = item.sys;
-      const { url: image } = item.fields.image.fields.file;
+      const { url: image } = item.fields.image[0].fields.file;
       const product = { id, ...item.fields, image };
       return product;
     });
@@ -57,6 +65,9 @@ export const ProductProvider = ({ children }) => {
       payload: { maxPrice, minPrice },
     });
   };
+
+  
+
 
   const handleNavbar = () => {
     dispatch({
