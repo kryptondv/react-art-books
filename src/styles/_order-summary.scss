@@ -13,16 +13,16 @@
 
     &--left {
       font-weight: 700;
-      border-bottom: 1px solid rgb(194, 194, 194);
-
+      
     }
-
+    
     &--mid {
       text-align: right;
     }
-
+    
     &--right {
       text-align: right;
+      border-bottom: 1px solid rgb(194, 194, 194);
       
     }
   }
@@ -30,9 +30,9 @@
   &__total {
     text-align: right;
     display: block;
-    margin: 1rem auto 0;
+    margin: 1.5rem auto 0;
     max-width: 400px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     
   }
