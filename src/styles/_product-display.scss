@@ -1,5 +1,6 @@
 .product-display {
   padding: 1rem;
+  min-height: calc(75vh - 247px);
 
   &__main-title {
     text-align: center;
@@ -54,8 +55,8 @@
     }
 
     &__img {
-      max-width: 500px;
-      margin-bottom: 0;
+      max-width: 320px;
+      margin: 0 1rem 0 auto;
       display: block;
     }
 
@@ -64,9 +65,10 @@
     }
 
     &__btn {
-      width: 19rem;
+      width: 16rem;
       margin: 2rem 0;
       text-transform: uppercase;
+      font-size: 1rem;
     }
   }
 

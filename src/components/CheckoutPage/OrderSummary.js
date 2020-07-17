@@ -7,17 +7,27 @@ const OrderSummary = () => {
   return (
     <div className="order-summary">
       <Title title="zamówienie" />
-      <table>
+      <table className="order-summary__order">
         <tbody>
           {cart.map(product => (
             <tr key={product.id}>
-              <td>{product.title}</td>
-              <td>x {product.count}</td>
+              <td className="order-summary__detail order-summary__detail--left">
+                {product.title}
+              </td>
+              <td className="order-summary__detail order-summary__detail--mid">
+                x {product.count}
+              </td>
+              <td className="order-summary__detail order-summary__detail--right">
+                {(product.count * product.price).toLocaleString('pl-PL', {
+                  style: 'currency',
+                  currency: 'PLN',
+                })}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <span>
+      <span className="order-summary__total">
         Suma:{' '}
         {cartTotal.toLocaleString('pl-PL', {
           style: 'currency',
