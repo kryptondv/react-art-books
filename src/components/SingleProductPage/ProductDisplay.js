@@ -29,7 +29,13 @@ const ProductDisplay = ({ product }) => {
               })}
             </span>
           </div>
-          <Link onClick={()=>addToCart(id)} to="/koszyk" className="btn product-display__btn">Dodaj do koszyka</Link>
+          <Link
+            onClick={() => addToCart(id)}
+            to="/koszyk"
+            className="btn product-display__btn"
+          >
+            Dodaj do koszyka
+          </Link>
         </div>
       </div>
       <p className="product-display__description">{description}</p>

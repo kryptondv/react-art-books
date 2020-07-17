@@ -1,6 +1,5 @@
 import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
-// import { items } from '../assets/data/data';
 import { client } from './contentful';
 
 const initialState = {
@@ -37,7 +36,6 @@ export const ProductProvider = ({ children }) => {
 
   const setProducts = products => {
     // format data
-    console.log(products)
     const storeProducts = products.map(item => {
       const { id } = item.sys;
       const { url: image } = item.fields.image[0].fields.file;

@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
 import { ProductContext } from '../context/Context';
-import defaultImg from '../assets/img/products/book-0.png';
+import defaultImg from '../assets/img/default_cover.png';
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(ProductContext);
