@@ -10,7 +10,7 @@ import SingleProductPage from '../pages/SingleProductPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import Topbar from './Topbar';
 import Sidecart from './Sidecart';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 
 const App = () => {
   return (
