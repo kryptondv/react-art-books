@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import Hero from '../components/Hero'
-import ProductList from '../components/ProductsPage/ProductList'
+import ProductList from '../components/productsPage/productList/ProductList'
 import Title from '../components/Title'
-import ProductFilters from '../components/ProductsPage/ProductFilters'
+import ProductFilters from '../components/productsPage/productFilters/ProductFilters'
 
 const ProductsPage = () => {
 

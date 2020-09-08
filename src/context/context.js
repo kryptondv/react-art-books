@@ -162,7 +162,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   // filters
-  const handleChange = ({ target }) => {
+  const handleFilterChange = ({ target }) => {
     dispatch({
       type: 'CHANGE_FILTER_VALUE',
       payload: target,
@@ -186,7 +186,7 @@ export const ProductProvider = ({ children }) => {
         decrementProductCount,
         removeProduct,
         clearCart,
-        handleChange,
+        handleFilterChange,
       }}
     >
       {children}

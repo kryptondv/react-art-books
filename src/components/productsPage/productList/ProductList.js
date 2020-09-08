@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import Product from '../Product';
-import { ProductContext } from '../../context/context';
+import Product from '../../Product';
+import { ProductContext } from '../../../context/context';
 
 const ProductList = () => {
   const { filteredProducts } = useContext(ProductContext);
@@ -15,6 +15,7 @@ const ProductList = () => {
         </div>
       );
     } else {
+      // empty search
       return (
         <h2 className="product-list__empty-search">
           Żaden produkt nie spełnia podanych kryteriów

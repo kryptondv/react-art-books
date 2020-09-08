@@ -14,7 +14,7 @@
 @import './footer';
 @import '../components/homePage/featuredProducts/featured-products';
 @import './product';
-@import './product-list';
+@import '../components/productsPage/productList/product-list';
 @import './product-display';
 @import './loading';
 @import '../components/cartPage/cartColumns/cart-columns';
@@ -22,5 +22,5 @@
 @import '../components/cartPage/cartList/cart-list';
 @import '../components/cartPage/cartItem/cart-item';
 @import '../components/cartPage/cartTotal/cart-total';
-@import './product-filters';
+@import '../components/productsPage/productFilters/product-filters';
 @import '../components/checkoutPage/orderSummary/order-summary';

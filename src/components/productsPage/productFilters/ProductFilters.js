@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../../context/context';
-import getUniqueOptions from '../../functions/getUniqueOptions';
+import { ProductContext } from '../../../context/context';
+import getUniqueOptions from '../../../functions/getUniqueOptions';
 
 const ProductFilters = () => {
   const {
     storeProducts,
-    handleChange,
+    handleFilterChange,
     search,
     category,
     price,
@@ -25,7 +25,7 @@ const ProductFilters = () => {
           </label>
           <input
             className="form-group__form-control form-group__form-control--search"
-            onChange={handleChange}
+            onChange={handleFilterChange}
             value={search}
             type="text"
             id="search"
@@ -41,7 +41,7 @@ const ProductFilters = () => {
           </label>
           <select
             className="form-group__form-control form-group__form-control--select"
-            onChange={handleChange}
+            onChange={handleFilterChange}
             value={category}
             name="category"
             id="category"
@@ -60,7 +60,7 @@ const ProductFilters = () => {
             className="form-group__form-control"
             type="range"
             value={price}
-            onChange={handleChange}
+            onChange={handleFilterChange}
             name="price"
             id="price"
             min={minPrice}
