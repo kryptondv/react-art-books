@@ -74,11 +74,11 @@ const Contact = () => {
 
   // JSX for required field message
   const requiredFieldMessage = message => (
-    <span className="contact-form__error-msg">{message}</span>
+    <span className="form__error-msg">{message}</span>
   );
 
   return (
-    <section className="contact">
+    <section className="form-section">
       {/* modal */}
       {messageIsSent && (
         <MessageSentModal
@@ -92,20 +92,20 @@ const Contact = () => {
 
       {/* form */}
       <form
-        className="contact-form"
+        className="form"
         onSubmit={handleSubmit}
         name="contact"
         method="post"
         noValidate
       >
         {/* name */}
-        <div className="contact-form__form-group">
-          <label className="contact-form__label" htmlFor="name">
+        <div className="form__form-group">
+          <label className="form__label" htmlFor="name">
             imię
           </label>
           <input
-            className={`contact-form__form-control ${
-              nameErr && 'contact-form__form-control--error'
+            className={`form__form-control ${
+              nameErr && 'form__form-control--error'
             }`}
             value={name}
             onChange={handleChange}
@@ -116,13 +116,13 @@ const Contact = () => {
           {nameErr && requiredFieldMessage(nameErr)}
         </div>
         {/* email */}
-        <div className="contact-form__form-group">
-          <label className="contact-form__label" htmlFor="email">
+        <div className="form__form-group">
+          <label className="form__label" htmlFor="email">
             email
           </label>
           <input
-            className={`contact-form__form-control ${
-              emailErr && 'contact-form__form-control--error'
+            className={`form__form-control ${
+              emailErr && 'form__form-control--error'
             }`}
             value={email}
             onChange={handleChange}
@@ -133,13 +133,13 @@ const Contact = () => {
           {emailErr && requiredFieldMessage(emailErr)}
         </div>
         {/* subject */}
-        <div className="contact-form__form-group">
-          <label className="contact-form__label" htmlFor="subject">
+        <div className="form__form-group">
+          <label className="form__label" htmlFor="subject">
             temat
           </label>
           <input
-            className={`contact-form__form-control ${
-              subjectErr && 'contact-form__form-control--error'
+            className={`form__form-control ${
+              subjectErr && 'form__form-control--error'
             }`}
             value={subject}
             onChange={handleChange}
@@ -151,13 +151,13 @@ const Contact = () => {
           {subjectErr && requiredFieldMessage(subjectErr)}
         </div>
         {/* message */}
-        <div className="contact-form__form-group">
-          <label className="contact-form__label" htmlFor="message">
+        <div className="form__form-group">
+          <label className="form__label" htmlFor="message">
             wiadomość
           </label>
           <textarea
-            className={`contact-form__form-control contact-form__form-control--message ${
-              messageErr && 'contact-form__form-control--error'
+            className={`form__form-control form__form-control--message ${
+              messageErr && 'form__form-control--error'
             }`}
             value={message}
             onChange={handleChange}
@@ -167,9 +167,9 @@ const Contact = () => {
           {messageErr && requiredFieldMessage(messageErr)}
         </div>
         {/* submit */}
-        <div className="contact-form__form-group">
+        <div className="form__form-group">
           <input
-            className="contact-form__submit-btn"
+            className="form__submit-btn"
             type="submit"
             value="Wyślij"
           />

@@ -1,10 +1,9 @@
 .order-summary {
   padding: 1.5rem 1rem;
   
-
   &__order {
-    margin: 0 auto;
     max-width: 400px;
+    margin: 0 auto;
   }
 
   &__detail {
@@ -21,17 +20,17 @@
     }
     
     &--right {
-      text-align: right;
       border-bottom: 1px solid rgb(194, 194, 194);
+      text-align: right;
       
     }
   }
 
   &__total {
-    text-align: right;
     display: block;
-    margin: 1.5rem auto 0;
     max-width: 400px;
+    margin: 1.5rem auto 0;
+    text-align: right;
     font-size: 1.4rem;
     font-weight: 700;
     
