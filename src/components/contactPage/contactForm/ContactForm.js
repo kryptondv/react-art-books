@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Title from '../Title';
-import MessageSentModal from '../MessageSentModal';
-import encode from '../../functions/encodeURI';
+import Title from '../../Title';
+import MessageSentModal from '../../MessageSentModal';
+import encode from '../../../functions/encodeURI';
 
-const Contact = () => {
+const ContactForm = () => {
   // initial state data
   const initialFormState = {
     name: '',
@@ -179,4 +179,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;

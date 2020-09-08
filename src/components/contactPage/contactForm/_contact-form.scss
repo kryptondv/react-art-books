@@ -1,14 +1,14 @@
 .form-section {
+  min-height: calc(75vh - 247px);
   margin: 1rem;
   margin-bottom: 4rem;
-  min-height: calc(75vh - 247px);
 }
 
 .form {
-  color: $color-lightgrey;
   width: 100%;
   max-width: 30rem;
   margin: 0 auto;
+  color: $color-lightgrey;
   
 
   &__form-group {
@@ -19,10 +19,9 @@
   }
 
   &__label {
-    // font-weight: 700;
+    margin-bottom: 0.1rem;
     font-size: .8rem;
     text-transform: capitalize;
-    margin-bottom: 0.1rem;
   }
 
   &__form-control {
@@ -32,14 +31,14 @@
     background: lighten($color-lightgrey, 60%);
     
     &:focus {
-      outline: none;
       border-color: lighten($color-lightgrey, 40%);
       box-shadow: 0 0 4px lighten($color-lightgrey, 50%);
+      outline: none;
     }
 
     &--message {
-      resize: none;
       height: 5rem;
+      resize: none;
     }
 
     &--error {
@@ -51,13 +50,13 @@
   &__submit-btn {
     margin-top: .5rem;
     padding: 0.5rem;
-    border-radius: 5px;
     border: 1px solid $color-primary;
-    font-family: 'Raleway', sans-serif;
+    border-radius: 5px;
     color: $color-white;
     background: $color-primary;
-    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
     transition: $transition-main;
 
@@ -71,10 +70,10 @@
 
   &__error-msg {
     position: absolute;
-    bottom: -.9rem;
-    font-size: 0.7rem;
-    color: #ff4545;
     right: 0;
+    bottom: -.9rem;
+    color: #ff4545;
+    font-size: 0.7rem;
     animation: fadeIn .1s;
   }
 }
