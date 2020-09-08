@@ -24,8 +24,8 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
+  // import data from contentful cms
   useEffect(() => {
-    // import data from contentful cms
     client
       .getEntries({
         content_type: 'artbooks',
@@ -34,7 +34,7 @@ export const ProductProvider = ({ children }) => {
       .catch(err => console.log(err));
   }, []);
 
-  // process imported product data
+  // process imported product data and set state
   const setProducts = products => {
     // format data
     const storeProducts = products.map(item => {
@@ -48,23 +48,94 @@ export const ProductProvider = ({ children }) => {
     const maxPrice = Math.max(...productPrices);
     const minPrice = Math.min(...productPrices);
 
-    // set state
     dispatch({
       type: 'SET_PRODUCTS',
       payload: storeProducts,
     });
-
     dispatch({
       type: 'SET_FEATURED_PRODUCTS',
       payload: featuredProducts,
     });
-
     dispatch({
       type: 'SET_PRICES',
       payload: { maxPrice, minPrice },
     });
   };
 
+  // set cart state
+  const setCart = cart => {
+    let price = 0;
+    let itemsCount = 0;
+    cart.forEach(product => {
+      price += product.price * product.count;
+      itemsCount += product.count;
+    });
+    
+    dispatch({
+      type: 'SET_CART',
+      payload: cart,
+    });
+    
+    dispatch({
+      type: 'GET_TOTALS',
+      payload: price,
+    });
+
+    dispatch({
+      type: 'SET_CART_ITEMS',
+      payload: itemsCount,
+    });
+  };
+  
+  // manipulating cart
+  const addToCart = id => {
+    let tempCart = [...state.cart];
+    const tempProducts = [...state.storeProducts];
+    let tempItem = tempCart.find(item => item.id === id);
+    if (!tempItem) {
+      tempItem = tempProducts.find(item => item.id === id);
+      let total = tempItem.price;
+      let cartItem = { ...tempItem, count: 1, total };
+      tempCart = [...tempCart, cartItem];
+    } else {
+      tempItem.count++;
+      tempItem.total = tempItem.price * tempItem.count;
+    }
+    
+    setCart(tempCart);
+  };
+  
+  const incrementProductCount = id => {
+    const tempCart = [...state.cart];
+    const item = tempCart.find(item => item.id === id);
+    item.count++;
+    
+    setCart(tempCart);
+  };
+  
+  const decrementProductCount = id => {
+    const tempCart = [...state.cart];
+    const item = tempCart.find(item => item.id === id);
+    item.count--;
+    if (item.count <= 0) {
+      removeProduct(id);
+    } else {
+      setCart(tempCart);
+    }
+  };
+  
+  const removeProduct = id => {
+    const tempCart = [...state.cart];
+    const itemIndex = tempCart.findIndex(item => item.id === id);
+    tempCart.splice(itemIndex, 1);
+    setCart(tempCart);
+  };
+  
+  const clearCart = () => {
+    const tempCart = [];
+    setCart(tempCart);
+  };
+  
   // ui
   const handleNavbar = () => {
     dispatch({
@@ -90,94 +161,21 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
-  // udpate cart
-  const setCart = cart => {
-    let price = 0;
-    let itemsCount = 0;
-    cart.forEach(product => {
-      price += product.price * product.count;
-      itemsCount += product.count;
-    });
-    dispatch({
-      type: 'SET_CART',
-      payload: cart,
-    });
-
-    dispatch({
-      type: 'GET_TOTALS',
-      payload: price,
-    });
-
-    dispatch({
-      type: 'SET_CART_ITEMS',
-      payload: itemsCount,
-    });
-  };
-
-  const addToCart = id => {
-    let tempCart = [...state.cart];
-    const tempProducts = [...state.storeProducts];
-    let tempItem = tempCart.find(item => item.id === id);
-    if (!tempItem) {
-      tempItem = tempProducts.find(item => item.id === id);
-      let total = tempItem.price;
-      let cartItem = { ...tempItem, count: 1, total };
-      tempCart = [...tempCart, cartItem];
-    } else {
-      tempItem.count++;
-      tempItem.total = tempItem.price * tempItem.count;
-    }
-
-    setCart(tempCart);
-  };
-
-  const incrementProductCount = id => {
-    const tempCart = [...state.cart];
-    const item = tempCart.find(item => item.id === id);
-
-    item.count++;
-    setCart(tempCart);
-  };
-
-  const decrementProductCount = id => {
-    const tempCart = [...state.cart];
-    const item = tempCart.find(item => item.id === id);
-    item.count--;
-    if (item.count <= 0) {
-      removeProduct(id);
-    } else {
-      setCart(tempCart);
-      // getTotals(tempCart);
-      // setCartItems(tempCart);
-    }
-  };
-
-  const removeProduct = id => {
-    const tempCart = [...state.cart];
-    const itemIndex = tempCart.findIndex(item => item.id === id);
-    tempCart.splice(itemIndex, 1);
-    setCart(tempCart);
-  };
-
-  const clearCart = () => {
-    const tempCart = [];
-    setCart(tempCart);
-  };
-
+  // filters
   const handleChange = ({ target }) => {
     dispatch({
       type: 'CHANGE_FILTER_VALUE',
       payload: target,
     });
-
+    
     dispatch({
       type: 'FILTER_PRODUCTS',
     });
   };
-
+  
   return (
     <ProductContext.Provider
-      value={{
+    value={{
         ...state,
         handleNavbar,
         handleCart,
