@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { ProductContext } from '../context/context';
 import Hero from '../components/Hero';
-import ProductDisplay from '../components/SingleProductPage/ProductDisplay';
+import ProductDisplay from '../components/singleProductPage/productDisplay/ProductDisplay';
 
 const SingleProductPage = ({ match }) => {
   const slug = match.params.slug;
