@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../../context/context';
+import { ProductContext } from '../../../context/context';
 import { Link } from 'react-router-dom';
-import Title from '../Title';
-import Product from '../Product';
+import Title from '../../Title';
+import Product from '../../Product';
 
-const Featured = () => {
+const FeaturedProducts = () => {
   const { featuredProducts } = useContext(ProductContext);
   const featuredProductsJSX = featuredProducts.map(product => (
     <Product key={product.id} product={product} />
@@ -23,4 +23,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default FeaturedProducts;

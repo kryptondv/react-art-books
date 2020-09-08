@@ -75,10 +75,11 @@ const CheckoutForm = () => {
   const handleSubmit = e => {
     const isValid = validate();
     if (isValid) {
+      const order = cart.map(({ title, author, count }) => `${title}, ${author} x ${count}`).join('; ');
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'order', ...formData, order: cart.join(', ') }),
+        body: encode({ 'form-name': 'order', ...formData, order}),
       })
       .then(() => {
         clearCart();
