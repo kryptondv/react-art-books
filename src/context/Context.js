@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from 'react';
-import AppReducer from './AppReducer';
+import appReducer from './appReducer';
 import { client } from './contentful';
 
 const initialState = {
@@ -18,14 +18,14 @@ const initialState = {
   category: 'wszystkie',
 };
 
-
 export const ProductContext = createContext();
 
 // Provider component
 export const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(appReducer, initialState);
 
   useEffect(() => {
+    // import data from contentful cms
     client
       .getEntries({
         content_type: 'artbooks',
@@ -34,6 +34,7 @@ export const ProductProvider = ({ children }) => {
       .catch(err => console.log(err));
   }, []);
 
+  // process imported product data
   const setProducts = products => {
     // format data
     const storeProducts = products.map(item => {
@@ -64,9 +65,7 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
-  
-
-
+  // ui
   const handleNavbar = () => {
     dispatch({
       type: 'HANDLE_NAVBAR',
@@ -91,6 +90,30 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+  // udpate cart
+  const setCart = cart => {
+    let price = 0;
+    let itemsCount = 0;
+    cart.forEach(product => {
+      price += product.price * product.count;
+      itemsCount += product.count;
+    });
+    dispatch({
+      type: 'SET_CART',
+      payload: cart,
+    });
+
+    dispatch({
+      type: 'GET_TOTALS',
+      payload: price,
+    });
+
+    dispatch({
+      type: 'SET_CART_ITEMS',
+      payload: itemsCount,
+    });
+  };
+
   const addToCart = id => {
     let tempCart = [...state.cart];
     const tempProducts = [...state.storeProducts];
@@ -106,15 +129,6 @@ export const ProductProvider = ({ children }) => {
     }
 
     setCart(tempCart);
-    getTotals(tempCart);
-    setCartItems(tempCart);
-  };
-
-  const setCart = cart => {
-    dispatch({
-      type: 'SET_CART',
-      payload: cart,
-    });
   };
 
   const incrementProductCount = id => {
@@ -123,8 +137,6 @@ export const ProductProvider = ({ children }) => {
 
     item.count++;
     setCart(tempCart);
-    getTotals(tempCart);
-    setCartItems(tempCart);
   };
 
   const decrementProductCount = id => {
@@ -135,8 +147,8 @@ export const ProductProvider = ({ children }) => {
       removeProduct(id);
     } else {
       setCart(tempCart);
-      getTotals(tempCart);
-      setCartItems(tempCart);
+      // getTotals(tempCart);
+      // setCartItems(tempCart);
     }
   };
 
@@ -145,48 +157,23 @@ export const ProductProvider = ({ children }) => {
     const itemIndex = tempCart.findIndex(item => item.id === id);
     tempCart.splice(itemIndex, 1);
     setCart(tempCart);
-    getTotals(tempCart);
-    setCartItems(tempCart);
   };
 
   const clearCart = () => {
     const tempCart = [];
     setCart(tempCart);
-    getTotals(tempCart);
-    setCartItems(tempCart);
   };
 
-  const setCartItems = cart => {
-    let itemsCount = 0;
-    cart.forEach(product => (itemsCount += product.count));
+  const handleChange = ({ target }) => {
     dispatch({
-      type: 'SET_CART_ITEMS',
-      payload: itemsCount,
-    });
-  };
-
-  const getTotals = cart => {
-    let price = 0;
-    cart.forEach(product => {
-      price += product.price * product.count;
+      type: 'CHANGE_FILTER_VALUE',
+      payload: target,
     });
 
     dispatch({
-      type: 'GET_TOTALS',
-      payload: price,
+      type: 'FILTER_PRODUCTS',
     });
   };
-
- const handleChange = ({ target }) => {
-   dispatch({
-     type: 'CHANGE_FILTER_VALUE',
-     payload: target,
-   });
-
-   dispatch({
-     type: 'FILTER_PRODUCTS',
-   });
- };
 
   return (
     <ProductContext.Provider
@@ -201,7 +188,7 @@ export const ProductProvider = ({ children }) => {
         decrementProductCount,
         removeProduct,
         clearCart,
-        handleChange
+        handleChange,
       }}
     >
       {children}

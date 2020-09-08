@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../context/Context';
+import { ProductContext } from '../context/context';
 
 const Navbar = () => {
   const { handleCart, handleNavbar, cartItems, navbarOpen } = useContext(ProductContext);

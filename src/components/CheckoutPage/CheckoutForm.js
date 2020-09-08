@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { ProductContext } from '../../context/Context';
+import { ProductContext } from '../../context/context';
 import encode from '../../functions/encodeURI';
 
 import Title from '../Title';

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import logo from '../assets/img/logo.png';
-import { ProductContext } from '../context/Context';
+import { ProductContext } from '../context/context';
 import Hamburger from './Hamburger';
 
 const Topbar = () => {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../../context/Context';
+import { ProductContext } from '../../context/context';
 import getUniqueOptions from '../../functions/getUniqueOptions';
 
 const ProductFilters = () => {

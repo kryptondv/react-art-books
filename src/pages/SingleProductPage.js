@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { ProductContext } from '../context/Context';
+import { ProductContext } from '../context/context';
 import Hero from '../components/Hero';
 import ProductDisplay from '../components/SingleProductPage/ProductDisplay';
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
-import { ProductContext } from '../context/Context';
+import { ProductContext } from '../context/context';
 import defaultImg from '../assets/img/default_cover.png';
 
 const Product = ({ product }) => {
