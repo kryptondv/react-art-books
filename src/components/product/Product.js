@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
-import { ProductContext } from '../context/context';
-import defaultImg from '../assets/img/default_cover.png';
+import { ProductContext } from '../../context/context';
+import defaultImg from '../../assets/img/default_cover.png';
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(ProductContext);
@@ -30,7 +30,7 @@ const Product = ({ product }) => {
   
 
   
-  // removes mobile overlay, that prevents accidental clicking on hidden icons
+  // removes mobile overlay, prevents accidental clicking on hidden icons
   const onProductClick = () => {
     setClicked(true);
   };

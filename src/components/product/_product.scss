@@ -1,12 +1,12 @@
 .product {
+  position: relative;
   transition: $transition-main;
   animation: fadeIn 0.3s ease;
-  position: relative;
 
   &:hover {
     .product__img {
-      opacity: 0.5;
       transform: scale(1.1);
+      opacity: 0.5;
     }
 
     .product__icons {
@@ -17,15 +17,19 @@
 
   &__img-container {
     position: relative;
-    overflow: hidden;
     border-radius: 5px;
-
+    overflow: hidden;
   }
 
   &__img {
-    width: 100%;
     display: block;
+    width: 100%;
     transition: $transition-main;
+
+    @media screen and (max-width: 768px) and (orientation: landscape) {
+      max-width: 300px;
+      margin: 0 auto 1rem;
+    }
   }
 
   &__icons {
@@ -39,22 +43,22 @@
 
   &__icon {
     display: inline-block;
-    background: $color-primary;
-    color: $color-white;
+    margin: 0.5rem;
+    padding: 0.6rem 0.55rem 0.5rem;
     border: 1px solid $color-primary;
-    padding: 0.6rem .55rem .5rem;
-    outline: none;
-    cursor: pointer;
-    margin: .5rem;
+    border-radius: 5px;
+    color: $color-white;
+    background: $color-primary;
     font-size: 1.3rem;
     line-height: 1.3rem;
-    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
     transition: $transition-main;
 
     &:hover,
     &:focus {
-      background: $color-white;
       color: $color-primary;
+      background: $color-white;
     }
   }
 
@@ -62,43 +66,35 @@
     position: absolute;
     bottom: -80%;
     left: 0;
-    font-size: .7rem;
-    animation: fadeIn .2s ease-out;
-    background: #5618ffd2;
-    color: $color-white;
     padding: 0.5rem;
     border-radius: 10px;
+    color: $color-white;
+    background: #5618ffd2;
+    font-size: 0.7rem;
     text-align: center;
+    animation: fadeIn 0.2s ease-out;
   }
 
   &__name {
-    text-transform: capitalize;
     padding: 0.5rem 0 0;
     text-align: center;
-    letter-spacing: 2px;
     font-size: 1.1rem;
     font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: capitalize;
   }
 
   &__price {
+    padding: 0.2rem 0;
+    font-size: 0.7rem;
+    font-weight: 300;
     text-align: center;
     letter-spacing: 2px;
-    padding: 0.2rem 0;
-    font-size: .7rem;
-    font-weight: 300;
-  }
-}
-
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .product__img {
-    max-width: 300px;
-    margin: 0 auto 1rem;
   }
 }
 
 @media (hover: none) {
-   .product::before {
+  .product::before {
     content: '';
     position: absolute;
     top: 0;
@@ -108,10 +104,9 @@
     z-index: 1;
     display: flex;
     justify-content: center;
-    
-   }
+  }
 
-   .product--clicked::before {
+  .product--clicked::before {
     display: none;
-   }
+  }
 }
