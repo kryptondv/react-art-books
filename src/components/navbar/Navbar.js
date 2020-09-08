@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../context/context';
+import { ProductContext } from '../../context/context';
 
 const Navbar = () => {
   const { handleCart, handleNavbar, cartItems, navbarOpen } = useContext(ProductContext);
   const [newItemAnimation, setNewItemAnimation] = useState(false)
 
   useEffect(() => {
-    
+    // add to cart icon animation
     let setAnimationFalseTimeout;
     if (cartItems > 0) {
       setNewItemAnimation(true);
