@@ -3,7 +3,7 @@ import { ProductContext } from '../../../context/context';
 import encode from '../../../functions/encodeURI';
 
 import Title from '../../Title';
-import MessageSentModal from '../../MessageSentModal';
+import MessageSentModal from '../../messageSentModal/MessageSentModal';
 
 const CheckoutForm = () => {
   const { clearCart, cart } = useContext(ProductContext);

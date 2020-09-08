@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Title from '../../Title';
-import MessageSentModal from '../../MessageSentModal';
+import MessageSentModal from '../../messageSentModal/MessageSentModal';
 import encode from '../../../functions/encodeURI';
 
 const ContactForm = () => {
