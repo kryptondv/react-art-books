@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Title from '../../Title';
+import Title from '../../title/Title';
 import MessageSentModal from '../../messageSentModal/MessageSentModal';
 import encode from '../../../functions/encodeURI';
 

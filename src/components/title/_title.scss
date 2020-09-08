@@ -6,8 +6,11 @@
   &__title {
     font-size: 2rem;
     letter-spacing: $spacing-main;
-    animation: fadeUp .5s ease-out forwards;
-  
+    animation: fadeUp 0.5s ease-out forwards;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   &__separator {
@@ -15,16 +18,10 @@
     height: 5px;
     margin: 0 auto;
     background: $color-primary;
-    animation: scaleUp .7s ease-out forwards;
+    animation: scaleUp 0.7s ease-out forwards;
 
     &--alternate {
       background: $color-black;
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .section-title__title {
-    font-size: 2.5rem;
   }
 }

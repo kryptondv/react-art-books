@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../../context/context';
 import { Link } from 'react-router-dom';
-import Title from '../../Title';
+import Title from '../../title/Title';
 import Product from '../../product/Product';
 
 const FeaturedProducts = () => {

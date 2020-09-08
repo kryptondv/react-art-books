@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ProductContext } from '../../../context/context';
 import encode from '../../../functions/encodeURI';
 
-import Title from '../../Title';
+import Title from '../../title/Title';
 import MessageSentModal from '../../messageSentModal/MessageSentModal';
 
 const CheckoutForm = () => {

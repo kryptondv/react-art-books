@@ -4,7 +4,7 @@ import { ProductContext } from '../../../context/context';
 import CartColumns from '../cartColumns/CartColumns';
 import CartList from '../cartList/CartList';
 import CartTotal from '../cartTotal/CartTotal';
-import Title from '../../Title';
+import Title from '../../title/Title';
 
 const CartComponents = (
   <>
