@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import logo from '../assets/img/logo.png';
 import { ProductContext } from '../context/context';
-import Hamburger from './Hamburger';
+import Hamburger from './hamburger/Hamburger';
 
 const Topbar = () => {
   const { handleNavbar, navbarOpen, closeCart } = useContext(ProductContext);
