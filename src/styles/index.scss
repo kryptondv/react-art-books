@@ -1,12 +1,13 @@
 @import './variables';
 @import './animations';
 @import './base';
-@import './topbar';
+@import './loading';
+@import './button';
+@import '../components/topbar/topbar';
 @import '../components/hamburger/hamburger';
 @import '../components/navbar/navbar';
 @import '../components/sideCart/sidecart';
 @import '../components/hero/hero';
-@import './button';
 @import '../components/title/title';
 @import '../components/aboutPage/info/info';
 @import '../components/contactPage/contactForm/contact-form';
@@ -16,7 +17,6 @@
 @import '../components/product/product';
 @import '../components/productsPage/productList/product-list';
 @import '../components/singleProductPage/productDisplay/product-display';
-@import './loading';
 @import '../components/cartPage/cartColumns/cart-columns';
 @import '../components/cartPage/cart/cart';
 @import '../components/cartPage/cartList/cart-list';

@@ -1,10 +1,10 @@
 .top-bar {
   position: fixed;
   top: 0;
+  z-index: 2;
   width: 100%;
   padding: 0.75rem 1rem;
   background: $color-white;
-  z-index: 2;
 
   &__link {
     display: flex;
@@ -28,13 +28,13 @@
 
 .overlay {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  animation: fadeIn 0.3s ease-out;
   display: none;
+  background: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease-out;
 
   &--navbar-is-open {
     display: block;

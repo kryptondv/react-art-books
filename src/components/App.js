@@ -8,7 +8,7 @@ import HomePage from '../pages/HomePage';
 import ProductsPage from '../pages/ProductsPage';
 import SingleProductPage from '../pages/SingleProductPage';
 import CheckoutPage from '../pages/CheckoutPage';
-import Topbar from './Topbar';
+import Topbar from './topbar/Topbar';
 import Sidecart from './sideCart/Sidecart';
 import Footer from './footer/Footer';
 
