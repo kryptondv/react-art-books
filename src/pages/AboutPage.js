@@ -1,5 +1,5 @@
 import React from 'react'
-import Info from '../components/AboutPage/Info'
+import Info from '../components/aboutPage/info/Info'
 import Hero from '../components/Hero'
 
 const AboutPage = () => {

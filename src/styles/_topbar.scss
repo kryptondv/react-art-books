@@ -18,6 +18,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (min-width: 768px), (orientation: landscape) {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -34,15 +39,8 @@
   &--navbar-is-open {
     display: block;
   }
-}
 
-@media screen and (min-width: 768px), (orientation: landscape) {
-  .overlay {
+  @media screen and (min-width: 768px), (orientation: landscape) {
     display: none;
-  }
-
-  .top-bar-container {
-    max-width: 1400px;
-    margin: 0 auto;
   }
 }

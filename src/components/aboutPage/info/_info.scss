@@ -1,7 +1,14 @@
 .info {
   padding: 1rem;
-  max-width: 1500px;
   margin: 0 auto;
+  max-width: 1500px;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 3rem;
+    padding: 0;
+  }
 
   &__text {
     text-align: center;
@@ -13,25 +20,18 @@
     width: 70%;
     margin: 0 auto;
     animation: fadeIn 1s ease;
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .info {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 3rem;
-    padding: 0;
-
-    &__img {
+    @media screen and (min-width: 1200px) {
       width: 50%;
     }
   }
+}
 
-  .text-container {
-    padding: 4rem;
+.text-container {
+  @media screen and (min-width: 1200px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 4rem;
   }
 }

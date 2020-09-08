@@ -8,7 +8,7 @@
 @import './hero';
 @import './button';
 @import './title';
-@import './info';
+@import '../components/aboutPage/info/info';
 @import './contact';
 @import './message-sent-modal';
 @import './footer';
@@ -17,10 +17,10 @@
 @import './product-list';
 @import './product-display';
 @import './loading';
-@import './cart-columns';
-@import './cart';
-@import './cart-list';
-@import './cart-item';
-@import './cart-total';
+@import '../components/cartPage/cartColumns/cart-columns';
+@import '../components/cartPage/cart/cart';
+@import '../components/cartPage/cartList/cart-list';
+@import '../components/cartPage/cartItem/cart-item';
+@import '../components/cartPage/cartTotal/cart-total';
 @import './product-filters';
 @import './order-summary';

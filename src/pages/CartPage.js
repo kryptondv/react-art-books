@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import Cart from '../components/CartPage/Cart';
+import Cart from '../components/cartPage/cart/Cart';
 import Hero from '../components/Hero';
 
 const CartPage = () => {

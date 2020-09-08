@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../../context/context';
+import { ProductContext } from '../../../context/context';
 
-import CartColumns from './CartColumns';
-import CartList from './CartList';
-import CartTotal from './CartTotal';
-import Title from '../Title';
+import CartColumns from '../cartColumns/CartColumns';
+import CartList from '../cartList/CartList';
+import CartTotal from '../cartTotal/CartTotal';
+import Title from '../../Title';
 
 const CartComponents = (
   <>
