@@ -34,7 +34,7 @@ export const ProductProvider = ({ children }) => {
       .catch(err => console.log(err));
   }, []);
 
-  // process imported product data and set state
+  // format imported product data and set state
   const setProducts = products => {
     // format data
     const storeProducts = products.map(item => {
