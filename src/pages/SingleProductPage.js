@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { ProductContext } from '../context/context';
-import Hero from '../components/Hero';
+import Hero from '../components/hero/Hero';
 import ProductDisplay from '../components/singleProductPage/productDisplay/ProductDisplay';
 
 const SingleProductPage = ({ match }) => {

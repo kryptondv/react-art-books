@@ -1,6 +1,6 @@
 import React from 'react'
 import Info from '../components/aboutPage/info/Info'
-import Hero from '../components/Hero'
+import Hero from '../components/hero/Hero'
 
 const AboutPage = () => {
   return (

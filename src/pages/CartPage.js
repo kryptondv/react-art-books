@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import Cart from '../components/cartPage/cart/Cart';
-import Hero from '../components/Hero';
+import Hero from '../components/hero/Hero';
 
 const CartPage = () => {
 
