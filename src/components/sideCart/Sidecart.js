@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import { ProductContext } from '../context/context';
+import { ProductContext } from '../../context/context';
 import { Link } from 'react-router-dom';
 
 const Sidecart = () => {
@@ -61,6 +61,7 @@ const Sidecart = () => {
         </>
       );
     } else {
+      // empty cart
       return <h3 className="sidecart__empty">Koszyk jest pusty :(</h3>;
     }
   };
